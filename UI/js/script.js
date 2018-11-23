@@ -1,7 +1,8 @@
 // Dropdown toggle
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
+    document.getElementById("toggleDropdown").addEventListener("click", function(e) {
+        document.getElementById("myDropdown").classList.toggle("show");
+    });
+
 //Menu toggle
 document.getElementById("toggler").addEventListener("click", function(e) {
     e.preventDefault;
