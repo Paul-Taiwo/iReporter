@@ -14,11 +14,12 @@
 <body>
 
     <!-- Left side menu -->
-    <div class="side-menu">
+    <div id="side-menu"class="toggle">
 
-        <!-- Mobile button -->
-        <button type="button" class="btn mobile-btn"><i class="lnr lnr-menu"></i></button>
-        
+        <!-- Hide menu button -->
+        <button type="button" id="hideMenu" class="btn close-btn"><i class="lnr lnr-cross"></i></button>
+        <!-- End -->
+
         <!-- Logo -->
         <div class="logo p-t-15 p-b-15">
             <h2 class="t-center">iReporter</h2>
@@ -26,7 +27,7 @@
 
         <!-- Sidebar menu -->
         <div class="sidebar-menu">
-            <ul>
+            <ul class="list-inline">
                 <li><a href="home.html" class="active"><i class="lnr lnr-home"></i> Dashboard</a></li>
                 <li><a href="index.html" class=""><i class="lnr lnr-flag"></i> Create a red flag record</a></li>
                 <li><a href="index.html" class=""><i class="lnr lnr-question-circle"></i> Create an intervention</a></li>
@@ -45,6 +46,11 @@
             <!-- Top bar -->
             <div class="topbar">
                 <nav class="navbar">
+
+                    <!-- Mobile button -->
+                    <button type="button" id="toggler" class="btn mobile-btn"><i class="lnr lnr-menu"></i></button>
+                    <!-- End -->
+
                     <ul class="list-inline">
                         <li class="app-search m-t-20 m-l-20">
                             <form action="" role="search">
