@@ -60,9 +60,13 @@ a {
 }
 
 /* Columns  */
-.c-sm-5, .c-sm-7, .c-12 {
+.c-sm-5,
+.c-sm-7, 
+.c-md-12, 
+.c-12, 
+.c-xl-6 {
     position: relative;
-    swidth: 100%;
+    width: 100%;
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
@@ -203,6 +207,10 @@ a {
     margin-bottom: 30px;
 }
 
+.m-b-60 {
+    margin-bottom: 60px;
+}
+
 /* Font Size */
 .font-12 {
     font-size: 12px;
@@ -313,11 +321,16 @@ a {
     overflow: hidden;
 }
 
+.page-wrapper {
+    padding: 20px 40px;
+}
+
 /* Nav bar */
 nav.navbar {
     width: 100%;
     height: 80px;
     background-color: #0f0f12;
+    display: -ms-flexbox;     
     display: flex;
 }
 
@@ -344,12 +357,14 @@ nav.navbar {
     position: absolute;
     right: 2%;
     top: 2.5%;
+    z-index: 1;
 }
 
 .dropdown-content {
     min-width: 200px;
     margin-top: 65px;
     display: none;
+    z-index: 2;
 }
 
 .dropdown-content a {
@@ -361,6 +376,33 @@ nav.navbar {
 
 .show {
     display: block;
+}
+
+/* Tables */
+table {
+    width: 100%;
+}
+
+thead {
+    background: #eeeeee;
+}
+
+tr {
+    border-bottom-color: #0f0f12;
+}
+
+td,
+th.num,
+th.nt-num {
+    text-align: left;
+    padding: 10px 15px
+}
+
+th.num {
+    width: 32%;
+}
+th.nt-num {
+    width: 68%;
 }
 
 /* Footer */
@@ -380,8 +422,14 @@ nav.navbar {
 @media only screen and (max-width: 800px) {
     #side-menu {
         left: -240px;
-        z-index: 1;
+        z-index: 2;
         transition: .2s;
+    }
+
+    .c-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 
     .content-page {
@@ -417,19 +465,37 @@ nav.navbar {
         display: none;
     }
 
+    .card-wrap {
+        padding: 10px;
+    }
+
+    .table-mobile {
+        overflow-x: auto;
+    }
+
     .footer {
         left: 0;
     }
 }
 
-@media (min-width: 576px){
+@media only screen and (min-width: 576px){
     .c-sm-7 {
         -ms-flex: 0 0 58.333333%;
         flex: 0 0 58.333333%;
         max-width: 58.333333%;
     }
+
     .c-sm-5 {
         -ms-flex: 0 0 41.666667%;
         flex: 0 0 41.666667%;
         max-width: 41.666667%;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .c-xl-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
 }
