@@ -98,6 +98,11 @@ a {
     display: block;
 }
 
+.btn-danger {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
 .mobile-btn,
 .close-btn {
     display: none;
@@ -399,10 +404,14 @@ th.nt-num {
 }
 
 th.num {
-    width: 32%;
+    width: 10%;
 }
 th.nt-num {
     width: 68%;
+}
+
+.del-record {
+    text-align: center;
 }
 
 /* Footer */
