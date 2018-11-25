@@ -137,8 +137,8 @@ a {
 .dropdown .dropbtn {
     font-size: 16px;    
     color: white;
-    padding: 14px 16px;
-    background-color: #5b6be8;
+    padding: 8px 16px;
+    background-color: inherit;
     float: right;
 }
 
@@ -419,7 +419,7 @@ nav.navbar {
 .dropdown {
     position: absolute;
     right: 2%;
-    top: 2.5%;
+    top: 18px;
     z-index: 1;
 }
 

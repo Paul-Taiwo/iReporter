@@ -16,15 +16,23 @@ document.querySelector("#hideMenu").addEventListener("click", (e) => {
 });
 
 // Toggle side menu active class
-const changeActiveLink = (evnt, linkId) => {
-    let sideLinks = document.querySelectorAll("#side-list li a");
-
-    sideLinks.forEach(item => {
-        item.classList = item.classList.replace(" active", "");
-
-        evnt.currentTarget.className += "active";
+let sideLinks = document.querySelectorAll("#side-list li a");
+sideLinks.forEach(item => {
+    item.addEventListener("click", (e) => {
+        item.className = item.className.replace(" active", "");
+        
+        e.currentTarget.classList += " active";
     });
-}
+});
+// const changeActive = (e) => {
+//     let sideLinks = document.querySelectorAll("#side-list li a");
+
+//     sideLinks.forEach(item => {
+//         item.classList = item.classList.replace(" active", "");
+//         console.log(e);
+//         e.currentTarget.className += "active";
+//     });
+// }
 
 //Create Red flag record tab
 const openForm = (evnt, contentId) => {
