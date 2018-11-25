@@ -111,6 +111,11 @@ a {
     color: #ffffff;
 }
 
+.btn-leaf {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
 .mobile-btn,
 .close-btn {
     display: none;
@@ -273,6 +278,23 @@ a {
     border: none;
 }
 
+.b-t-r-0 {
+    border-top-right-radius: 0;
+}
+
+.b-b-r-0 {
+    border-bottom-right-radius: 0;
+}
+
+.b-t-l-0 {
+    border-top-left-radius: 0;
+}
+
+.b-b-l-0 {
+    border-bottom-left-radius: 0;
+}
+
+/* Card */
 .card {
     position: relative;
     display: -ms-flexbox;
@@ -447,7 +469,8 @@ th.nt-num {
 }
 
 .del-record {
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 /* Full view */
