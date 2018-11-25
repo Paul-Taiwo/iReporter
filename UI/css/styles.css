@@ -60,10 +60,14 @@ a {
 }
 
 /* Columns  */
+
 .c-sm-5,
 .c-sm-7, 
+.c-sm-12, 
+.c-md-6,
 .c-md-12, 
-.c-12, 
+.c-12,
+.c-xl-3, 
 .c-xl-6 {
     position: relative;
     width: 100%;
@@ -79,6 +83,10 @@ a {
 /* Text Format */
 .t-center {
     text-align: center!important;
+}
+
+.t-white {
+    color: #ffffff;
 }
 
 .t-muted {
@@ -273,6 +281,27 @@ a {
     font-size: 40px;
 }
 
+.font-4em {
+    font-size: 4em;
+}
+
+/* Backgrounds */
+.bg-success {
+    background-color: #28a745 !important;
+}
+
+.bg-info {
+    background-color: #007bff !important;
+}
+
+.bg-warning {
+    background-color: #f8af10 !important;
+}
+
+.bg-danger {
+    background-color: #dc3545 !important;
+}
+
 /* Border */
 .no-border {
     border: none;
@@ -385,7 +414,6 @@ a {
 
 .tablinks {
     width: 40px;
-    color: #ffffff;
 }
 
 /* Nav bar */
@@ -502,7 +530,7 @@ th.nt-num {
 }
 
 /* Media queries */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 770px){
 
     .page-wrapper {
         padding: 0 15px;
@@ -512,12 +540,6 @@ th.nt-num {
         left: -240px;
         z-index: 2;
         transition: .2s;
-    }
-
-    .c-md-12 {
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        max-width: 100%;
     }
 
     .content-page {
@@ -566,6 +588,20 @@ th.nt-num {
     }
 }
 
+@media only screen and (min-width: 768px){
+    .c-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .c-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
 @media only screen and (min-width: 576px){
     .c-sm-7 {
         -ms-flex: 0 0 58.333333%;
@@ -578,6 +614,12 @@ th.nt-num {
         flex: 0 0 41.666667%;
         max-width: 41.666667%;
     }
+    
+    .c-sm-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
 
 @media only screen and (min-width: 1200px){
@@ -585,5 +627,10 @@ th.nt-num {
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
         max-width: 50%;
+    }
+    .c-xl-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
     }
 }
