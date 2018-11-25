@@ -324,7 +324,7 @@ a {
     bottom: 0;
     width: 240px;
 }
-.active {
+.sidebar-menu ul li a.active {
     color:  #5b6be8;
 }
 
