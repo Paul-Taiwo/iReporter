@@ -130,6 +130,11 @@ a {
     background-color: #007bff;
 }
 
+.btn-disabled {
+    cursor: not-allowed;
+    opacity: 0.67;
+}
+
 .btn-danger,
 .btn-info,
 .btn-leaf {
@@ -517,8 +522,17 @@ th.nt-num {
 th.num {
     width: 10%;
 }
+
 th.nt-num {
     width: 68%;
+}
+
+th.width-20 {
+    width: 20%;
+}
+
+th.width-50 {
+    width: 50%;
 }
 
 .del-record {
