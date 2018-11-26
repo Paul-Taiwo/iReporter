@@ -36,7 +36,11 @@ html {
     overflow-x: hidden;
     position: relative;
     min-height: 100%;
+}
+
+body {
     background: #eff3f6;
+
 }
 
 h1,
@@ -62,6 +66,7 @@ a {
 /* Columns  */
 
 .c-sm-5,
+.c-sm-6,
 .c-sm-7, 
 .c-sm-12, 
 .c-md-6,
@@ -300,6 +305,10 @@ a {
 
 .bg-danger {
     background-color: #dc3545 !important;
+}
+
+.bg-black {
+    background-color: #0f0f12;
 }
 
 /* Border */
@@ -603,6 +612,12 @@ th.nt-num {
 }
 
 @media only screen and (min-width: 576px){
+    .c-sm-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
     .c-sm-7 {
         -ms-flex: 0 0 58.333333%;
         flex: 0 0 58.333333%;
