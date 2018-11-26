@@ -120,11 +120,19 @@ a {
 
 .btn-danger {
     background-color: #dc3545;
-    color: #ffffff;
 }
 
 .btn-leaf {
     background-color: #28a745;
+}
+
+.btn-info {
+    background-color: #007bff;
+}
+
+.btn-danger,
+.btn-info,
+.btn-leaf {
     color: #ffffff;
 }
 
@@ -313,6 +321,10 @@ a {
 /* Border */
 .no-border {
     border: none;
+}
+
+.no-border-radius {
+    border-radius: unset;
 }
 
 .b-t-r-0 {
