@@ -56,3 +56,17 @@ const openForm = (evnt, contentId) => {
     document.querySelector(contentId).style.display="block";
     evnt.currentTarget.className += " active";
 }
+
+// Show Record 
+const showPage = () => {
+    document.querySelector("#full-view").style.top = "0";
+    document.querySelector("#full-view").style.zIndex = "3";
+    document.querySelector("#full-view").style.backgroundColor = "#333333c9";
+}
+
+// Close Record
+const closePage = () => {
+    document.querySelector("#full-view").style.top = "-200%";
+    document.querySelector("#full-view").style.zIndex = "-1";
+    document.querySelector("#full-view").style.backgroundColor = "transparent";
+}
