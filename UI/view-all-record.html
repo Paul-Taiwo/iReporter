@@ -105,7 +105,7 @@
                                                 <h5 class="bg-danger t-white t-center">Rejected</h5>
                                             </td>
                                             <td class="t-center del-record">
-                                                <button class="btns btn-leaf b-t-r-0 b-b-r-0">View</button>
+                                                <button class="btns btn-leaf b-t-r-0 b-b-r-0" onclick="showPage()">View</button>
                                                 <button class="btns btn-info no-border-radius btn-disabled">Edit</button>
                                                 <button class="btns btn-danger b-t-l-0 b-b-l-0 btn-disabled">Delete</button>
                                             </td>
@@ -118,7 +118,7 @@
                                                 <h5 class="bg-warning t-white t-center">Pending</h5>
                                             </td>
                                             <td class="t-center del-record">
-                                                <button class="btns btn-leaf b-t-r-0 b-b-r-0">View</button>
+                                                <button class="btns btn-leaf b-t-r-0 b-b-r-0" onclick="showPage()">View</button>
                                                 <button class="btns btn-info no-border-radius">Edit</button>
                                                 <button class="btns btn-danger b-t-l-0 b-b-l-0">Delete</button>
                                             </td>    
@@ -158,7 +158,7 @@
                                                 <h5 class="bg-success t-white t-center">Resolved</h5>
                                             </td>
                                             <td class="t-center del-record">
-                                                <button class="btns btn-leaf b-t-r-0 b-b-r-0" id="showPage">View</button>
+                                                <button class="btns btn-leaf b-t-r-0 b-b-r-0" onclick="showPage()">View</button>
                                                 <button class="btns btn-info no-border-radius btn-disabled">Edit</button>
                                                 <button class="btns btn-danger b-t-l-0 b-b-l-0 btn-disabled">Delete</button>
                                             </td>
@@ -171,7 +171,7 @@
                                                 <h5 class="bg-warning t-white t-center">Under Investigation</h5>
                                             </td>
                                             <td class="t-center del-record">
-                                                <button class="btns btn-leaf b-t-r-0 b-b-r-0">View</button>
+                                                <button class="btns btn-leaf b-t-r-0 b-b-r-0" onclick="showPage()">View</button>
                                                 <button class="btns btn-info no-border-radius btn-disabled">Edit</button>
                                                 <button class="btns btn-danger b-t-l-0 b-b-l-0 btn-disabled">Delete</button>
                                             </td>
@@ -187,12 +187,14 @@
                 </div>
 
                 <!-- View full record -->
-                <div class="full-view">
+                <div id="full-view">
                     <div class="view-page">
                         <div class="card">
 
                         <!-- Hide page button -->
-                        <button type="button" id="hidePage" class="btns close-fullpage btn-danger"><i class="lnr lnr-cross"></i></button>
+                        <button type="button" onclick="closePage()" id="hidePage" class="btns close-fullpage btn-danger">
+                            <i class="lnr lnr-cross"></i>
+                        </button>
                         <!-- End -->
 
                             <div class="card-wrap">

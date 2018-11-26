@@ -545,15 +545,14 @@ th.width-50 {
 }
 
 /* Full view */
-.full-view  {
-    background-color: #333333c9;
+#full-view  {
     position: absolute;
-    top: 0;
+    top: -200%;
     right: 0;
     left: 0;
     bottom: 0;
-    z-index: 3;
-    display: none;
+    z-index: -1;
+    transition: ease 1s;
 }
 
 .view-page {
