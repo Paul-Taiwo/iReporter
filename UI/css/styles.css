@@ -137,9 +137,28 @@ a {
 
 .btn-danger,
 .btn-info,
-.btn-leaf {
+.btn-leaf,
+.tabs button.active {
     color: #ffffff;
+    transition: ease .9s;
 }
+
+.btn-leaf:hover {
+    background-color: #037b1e;
+}
+
+.btn-info:hover {
+    background-color: #165aa2;
+}
+
+.btn-danger:hover {
+    background-color: #9a0a18;
+}
+
+.tabs button.active:hover {
+    background-color: #b51423;
+}
+
 
 .mobile-btn,
 .close-btn {
@@ -169,6 +188,7 @@ a {
 
 .tabs button.active {
     background-color: #dc3545;
+    outline: none;
 }
 
 .close-fullpage {
@@ -409,7 +429,7 @@ a {
     bottom: 0;
     width: 240px;
 }
-.sidebar-menu ul li a.active {
+.sidebar-menu ul li a:active {
     color:  #5b6be8;
 }
 
