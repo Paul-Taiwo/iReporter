@@ -89,14 +89,19 @@
                                                 <th class="num">S/N</th>
                                                 <th class="width-20">Username</th>
                                                 <th class="nt-num">Name of record</th>
+                                                <th class="width-20">View Record</th>
                                                 <th>Status</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+
                                             <tr>
                                                 <td>1</td>
                                                 <td>Akpors</td>
                                                 <td>Bad Road at Ikola-Odunsi</td>
+                                                <td class="t-center del-record">
+                                                    <button class="btns btn-leaf" onclick="showPage()">View</button>
+                                                </td>
                                                 <td>
                                                     <select name="changeStatus" id="changeStatus">
                                                         <option value="select">Select status</option>
@@ -106,11 +111,15 @@
                                                     </select>
                                                 </td>
                                             </tr>
+
                                             <tr>
                                                 <td>2</td>
                                                 <td>Osamama</td>
                                                 <td>Burst water pipe at Agege moshalashi</td>
                                                 <td>
+                                                    <button class="btns btn-leaf" onclick="showPage()">View</button>
+                                                </td>
+                                                <td>
                                                     <select name="changeStatus" id="changeStatus">
                                                         <option value="select">Select status</option>
                                                         <option value="resolved">Resolved</option>
@@ -119,23 +128,14 @@
                                                     </select>
                                                 </td>
                                             </tr>
+
                                             <tr>
                                                 <td>3</td>
                                                 <td>iamjohn</td>
                                                 <td>Bribery Corruption</td>
                                                 <td>
-                                                    <select name="changeStatus" id="changeStatus">
-                                                        <option value="select">Select status</option>
-                                                        <option value="resolved">Resolved</option>
-                                                        <option value="under-nvestigation">Under Investigation</option>
-                                                        <option value="rejected">Rejected</option>
-                                                    </select>
+                                                    <button class="btns btn-leaf" onclick="showPage()">View</button>
                                                 </td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>petersaint</td>
-                                                <td>Embezzlement of Government Funds</td>
                                                 <td>
                                                     <select name="changeStatus" id="changeStatus">
                                                         <option value="select">Select status</option>
@@ -145,6 +145,24 @@
                                                     </select>
                                                 </td>
                                             </tr>
+
+                                            <tr>
+                                                <td>4</td>
+                                                <td>petersaint</td>
+                                                <td>Embezzlement of Government Funds</td>
+                                                <td>
+                                                    <button class="btns btn-leaf" onclick="showPage()">View</button>
+                                                </td>
+                                                <td>
+                                                    <select name="changeStatus" id="changeStatus">
+                                                        <option value="select">Select status</option>
+                                                        <option value="resolved">Resolved</option>
+                                                        <option value="under-nvestigation">Under Investigation</option>
+                                                        <option value="rejected">Rejected</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+
                                         </tbody>
                                     </table>
     
@@ -153,6 +171,65 @@
                         </div>
                     </div>
                     <!-- End -->
+
+                    <!-- View full record -->
+                <div id="full-view">
+                    <div class="view-page">
+                        <div class="card">
+
+                        <!-- Hide page button -->
+                        <button type="button" onclick="closePage()" id="hidePage" class="btns close-fullpage btn-danger">
+                            <i class="lnr lnr-cross"></i>
+                        </button>
+                        <!-- End -->
+
+                            <div class="card-wrap">
+                                <div>
+                                    <h3>Name of record:</h3>
+                                    <p>Bribery Corruption</p>
+                                </div>
+
+                                <div>
+                                    <h3>Type of corruption:</h3>
+                                    <p>Bribery</p>
+                                </div>
+
+                                <div>
+                                    <h3>When did it happen?</h3>
+                                    <p>11/03/2002</p>
+                                </div>
+
+                                <div>
+                                    <h3>What happened?</h3>
+                                    <p>Blablabla Blablabla Blablabla Blablabla Blablabla 
+                                        BlablablaBlablablaBlablablaBlablabla Blablabla 
+                                        BlablablaBlablablaBlablablaBlablablaBlablablaBlablabla
+                                        aBlablablaBlablablaBlablabla
+                                        aBlablablaBlablablaBlablablaaBlablablaBlablablaBlablabla
+                                        aBlablablaBlablablaBlablabla aBlablablaBlablablaBlablabla
+                                        aBlablablaBlablablaBlablabla
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h3>Images provided</h3>
+                                    <p>None</p>
+                                </div>
+
+                                <div>
+                                    <h3>Videos provided</h3>
+                                    <p>None</p>
+                                </div>
+
+                                <div>
+                                    <h3>Location of event</h3>
+                                    <p>Ikeja, Lagos</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <!-- Page content ends -->
