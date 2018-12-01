@@ -1,8 +1,5 @@
 # iReporter
 
-[![Build Status](https://travis-ci.org/Paul-Taiwo/iReporter.svg?branch=feature)](https://travis-ci.org/Paul-Taiwo/iReporter)
-[![Coverage Status](https://coveralls.io/repos/github/Paul-Taiwo/iReporter/badge.svg?branch=feature)](https://coveralls.io/github/Paul-Taiwo/iReporter?branch=feature)
-
 [![Build Status](https://travis-ci.org/Paul-Taiwo/iReporter.svg?branch=API)](https://travis-ci.org/Paul-Taiwo/iReporter)
 [![Coverage Status](https://coveralls.io/repos/github/Paul-Taiwo/iReporter/badge.svg?branch=API)](https://coveralls.io/github/Paul-Taiwo/iReporter?branch=API)
 
