@@ -1,5 +1,6 @@
 import chai, { expect } from 'chai';
 import chaiHttp from 'chai-http';
+import { describe, it } from 'mocha';
 import app from '../app';
 
 chai.use(chaiHttp);
@@ -143,5 +144,23 @@ describe('Records Controller', () => {
         done();
       });
   });
+});
 
+describe('Get all records', () => {
+  it('should get all records', (done) => {
+    chai
+      .request(app)
+      .get('/api/v1/records')
+      .set({
+        'Content-type': 'application/json',
+      })
+      .end((err, res) => {
+        expect(err).to.equal(null);
+        expect(res.body).to.be.an('object');
+        expect(res.statusCode).to.equal(201);
+        expect(res.body.status).to.equal(201);
+        expect(res.body.data).to.be.an('array');
+        done();
+      });
+  });
 });
