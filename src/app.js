@@ -5,6 +5,7 @@ import cors from 'cors';
 import log from 'fancy-log';
 
 import indexRoutes from './routes';
+import recordRoutes from './routes/records';
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(cors());
 app.use(logger('dev'));
 
 app.use('/api/v1/', indexRoutes);
+app.use('/api/v1/records', recordRoutes);
 
 app.all('*', (req, res) => res.status(404).json({
   status: 'error',
