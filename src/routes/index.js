@@ -1,10 +1,10 @@
 import express from 'express';
 
-const app = express();
+const Route = express.Router();
 
-app.get('/', (req, res) => res.status(200).json({
-    status: 'success',
-    message: 'Hello World',
+Route.get('/', (req, res) => res.status(200).json({
+  status: 'success',
+  message: 'Welcome to iReporter API',
 }));
 
-export default app;
+export default Route;
