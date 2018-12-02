@@ -28,6 +28,14 @@ class Records {
       data: [create],
     });
   }
+
+  static getAll(req, res) {
+    const findAll = Record.findAll();
+    return res.status(201).json({
+      status: 201,
+      findAll,
+    });
+  }
 }
 
 export default Records;

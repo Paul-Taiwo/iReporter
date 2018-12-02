@@ -1,8 +1,9 @@
-import { create } from './record';
+import { create, findAll } from './record';
 
 const models = {
   Record: {
     create,
+    findAll,
   },
 };
 

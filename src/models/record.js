@@ -18,10 +18,14 @@ const create = (data = null) => {
   return dataToCreate;
 };
 
+const findAll = () => allRecords;
+
 export {
   create,
+  findAll,
 };
 
 export default {
   create,
+  findAll,
 };
