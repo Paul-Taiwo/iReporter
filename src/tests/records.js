@@ -184,4 +184,20 @@ describe('Records Controller', () => {
         });
     });
   });
+
+  describe('Update a Record', () => {
+    it('should update record', (done) => {
+      chai
+        .request(app)
+        .patch('/api/v1/records/:id')
+        .set({
+          'Content-type': 'application/json',
+        })
+        .end((err, res) => {
+          expect(err).to.equal(null);
+          expect(res.body).to.be.an('object');
+          done(err);
+        });
+    });
+  });
 });
