@@ -17,7 +17,6 @@ app.use(logger('dev'));
 app.use('/api/v1/', indexRoutes);
 app.use('/api/v1/records', recordRoutes);
 
-
 app.all('*', (req, res) => res.status(404).json({
   status: 'error',
   message: 'Not found',
