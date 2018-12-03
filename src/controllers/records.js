@@ -16,6 +16,7 @@ class Records {
       geolocation,
     });
 
+
     if (Object.keys(create).length < 1) {
       return res.status(500).json({
         status: 500,
@@ -42,6 +43,15 @@ class Records {
     return res.status(201).json({
       status: 201,
       data: [findOne],
+    });
+  }
+
+  static update(req, res) {
+    
+    const updateRecord = Record.update(req.params.id, req.body);
+    return res.status(201).json({
+      status: 201,
+      data: [updateRecord],
     });
   }
 }

@@ -1,5 +1,4 @@
 const allRecords = [];
-const value = [];
 
 const create = (data = null) => {
   if (!data) {
@@ -11,7 +10,7 @@ const create = (data = null) => {
     ...data,
     status: 'pending',
     createdAt: new Date(),
-    updatedAt: new Date(),
+    updatedAt: '',
   };
 
   allRecords.push(dataToCreate);
@@ -21,16 +20,31 @@ const create = (data = null) => {
 
 const findAll = () => allRecords;
 
-const findOne = id => allRecords.find(record => record.id == id) ;
+const findOne = id => allRecords.find(record => record.id == id);
+
+const update = (id, data) => {
+
+  const index = allRecords.indexOf(findOne(id));
+
+  allRecords[index].name = data.name;
+  allRecords[index].images = data.images;
+  allRecords[index].videos = data.videos;
+  allRecords[index].geolocation = data.geolocation;
+  allRecords[index].updatedAt = new Date();
+  
+  return allRecords[index];
+}
 
 export {
   create,
   findAll,
   findOne,
+  update,
 };
 
 export default {
   create,
   findAll,
   findOne,
+  update,
 };
