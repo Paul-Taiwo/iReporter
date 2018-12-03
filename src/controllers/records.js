@@ -1,4 +1,5 @@
 import models from '../models';
+import { delRecord } from '../models/record';
 
 const { Record } = models;
 
@@ -47,11 +48,18 @@ class Records {
   }
 
   static update(req, res) {
-    
     const updateRecord = Record.update(req.params.id, req.body);
-    return res.status(201).json({
-      status: 201,
+    return res.status(200).json({
+      status: 200,
       data: [updateRecord],
+    });
+  }
+
+  static delete(req, res) {
+    const del = Record.delRecord(req.params.id);
+    return res.status(204).json({
+      status: 204,
+      data: [del],
     });
   }
 }

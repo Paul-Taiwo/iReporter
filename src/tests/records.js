@@ -200,4 +200,22 @@ describe('Records Controller', () => {
         });
     });
   });
+
+  describe('Delete a Record', () => {
+    it('should delete a record', (done) => {
+      chai
+        .request(app)
+        .delete('/api/v1/records/:id')
+        .set({
+          'Content-type': 'application/json',
+        })
+        .end((err, res) => {
+          expect(err).to.equal(null);
+          expect(res.statusCode).to.be.equal(204);
+          expect(res.status).to.equal(204);
+          expect(res.body).to.be.an('object');
+          done(err);
+        });
+    });
+  });
 });
