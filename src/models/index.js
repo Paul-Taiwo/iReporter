@@ -1,9 +1,10 @@
-import { create, findAll } from './record';
+import { create, findAll, findOne } from './record';
 
 const models = {
   Record: {
     create,
     findAll,
+    findOne,
   },
 };
 

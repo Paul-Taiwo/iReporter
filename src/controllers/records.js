@@ -33,7 +33,15 @@ class Records {
     const findAll = Record.findAll();
     return res.status(201).json({
       status: 201,
-      findAll,
+      data: findAll,
+    });
+  }
+
+  static getOne(req, res) {
+    const findOne = Record.findOne(req.params.id);
+    return res.status(201).json({
+      status: 201,
+      data: [findOne],
     });
   }
 }

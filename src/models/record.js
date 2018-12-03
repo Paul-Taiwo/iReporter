@@ -1,4 +1,5 @@
 const allRecords = [];
+const value = [];
 
 const create = (data = null) => {
   if (!data) {
@@ -20,12 +21,16 @@ const create = (data = null) => {
 
 const findAll = () => allRecords;
 
+const findOne = id => allRecords.find(record => record.id == id) ;
+
 export {
   create,
   findAll,
+  findOne,
 };
 
 export default {
   create,
   findAll,
+  findOne,
 };

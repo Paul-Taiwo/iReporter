@@ -159,7 +159,27 @@ describe('Records Controller', () => {
           expect(res.body).to.be.an('object');
           expect(res.statusCode).to.equal(201);
           expect(res.body.status).to.equal(201);
-          expect(res.body.findAll).to.be.an('array');
+          expect(res.body.data).to.be.an('array');
+          done();
+        });
+    });
+  });
+
+  describe('Get a specific record', () => {
+    it('should get a specific record', (done) => {
+      chai
+        .request(app)
+        .get('/api/v1/records/:id')
+        .set({
+          'Content-type': 'application/json',
+        })
+        .end((err, res) => {
+          expect(err).to.equal(null);
+          expect(res.body).to.be.an('object');
+          expect(res.statusCode).to.equal(201);
+          expect(res.body.status).to.equal(201);
+          expect(res.body.data).to.be.an('array');
+          expect(res.body.data.length).to.equal(1);
           done();
         });
     });

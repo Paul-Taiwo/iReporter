@@ -9,4 +9,6 @@ const Route = express.Router();
 
 Route.post('/', RecordValidations.createRecord, RecordController.createRecord);
 Route.get('/', RecordController.getAll);
+Route.get('/:id', RecordController.getOne);
+
 export default Route;
