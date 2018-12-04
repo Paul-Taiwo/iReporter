@@ -8,7 +8,7 @@
     "lint": "eslint ./src",
     "fix": "eslint ./src --fix",
     "build": "babel ./src -d ./build",
-    "start": "nodemon ./build/app",
+    "start": "nodemon ./build/app.js",
     "test": "nyc cross-env NODE_ENV=test mocha --compilers js:babel-register ./src/tests/* --no-deprecation --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
@@ -26,7 +26,6 @@
     "i": "^0.3.6",
     "mocha": "^5.2.0",
     "morgan": "^1.9.1",
-    "nodemon": "^1.18.7",
     "nyc": "^13.1.0"
   },
   "devDependencies": {
@@ -35,6 +34,7 @@
     "babel-preset-env": "^1.7.0",
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0"
+    "eslint-plugin-import": "^2.14.0",
+    "nodemon": "^1.18.7"
   }
 }
