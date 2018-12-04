@@ -1,4 +1,4 @@
-import { create, findAll, findOne, update } from './record';
+import { create, findAll, findOne, update, delRecord } from './record';
 
 const models = {
   Record: {
@@ -6,6 +6,7 @@ const models = {
     findAll,
     findOne,
     update,
+    delRecord,
   },
 };
 

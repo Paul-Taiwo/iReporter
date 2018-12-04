@@ -6,11 +6,11 @@ import app from '../app';
 
 chai.use(chaiHttp);
 
-describe('Records Controller', () => {
+describe('red-flags Controller', () => {
   it('should create new record', (done) => {
     chai
       .request(app)
-      .post('/api/v1/records')
+      .post('/api/v1/red-flags')
       .set({
         'Content-type': 'application/json',
       })
@@ -42,7 +42,7 @@ describe('Records Controller', () => {
   it('should not create without name', (done) => {
     chai
       .request(app)
-      .post('/api/v1/records')
+      .post('/api/v1/red-flags')
       .set({
         'Content-type': 'application/json',
       })
@@ -71,7 +71,7 @@ describe('Records Controller', () => {
   it('should not create without type', (done) => {
     chai
       .request(app)
-      .post('/api/v1/records')
+      .post('/api/v1/red-flags')
       .set({
         'Content-type': 'application/json',
       })
@@ -100,7 +100,7 @@ describe('Records Controller', () => {
   it('should not create without geolocation', (done) => {
     chai
       .request(app)
-      .post('/api/v1/records')
+      .post('/api/v1/red-flags')
       .set({
         'Content-type': 'application/json',
       })
@@ -123,7 +123,7 @@ describe('Records Controller', () => {
   it('should create without image or video', (done) => {
     chai
       .request(app)
-      .post('/api/v1/records')
+      .post('/api/v1/red-flags')
       .set({
         'Content-type': 'application/json',
       })
@@ -146,11 +146,11 @@ describe('Records Controller', () => {
       });
   });
 
-  describe('Get all records', () => {
-    it('should get all records', (done) => {
+  describe('Get all red-flags', () => {
+    it('should get all red-flags', (done) => {
       chai
         .request(app)
-        .get('/api/v1/records')
+        .get('/api/v1/red-flags')
         .set({
           'Content-type': 'application/json',
         })
@@ -169,7 +169,7 @@ describe('Records Controller', () => {
     it('should get a specific record', (done) => {
       chai
         .request(app)
-        .get('/api/v1/records/:id')
+        .get('/api/v1/red-flags/:id')
         .set({
           'Content-type': 'application/json',
         })
@@ -189,12 +189,30 @@ describe('Records Controller', () => {
     it('should update record', (done) => {
       chai
         .request(app)
-        .patch('/api/v1/records/:id')
+        .patch('/api/v1/red-flags/:id')
         .set({
           'Content-type': 'application/json',
         })
         .end((err, res) => {
           expect(err).to.equal(null);
+          expect(res.body).to.be.an('object');
+          done(err);
+        });
+    });
+  });
+
+  describe('Delete a Record', () => {
+    it('should delete a record', (done) => {
+      chai
+        .request(app)
+        .delete('/api/v1/red-flags/:id')
+        .set({
+          'Content-type': 'application/json',
+        })
+        .end((err, res) => {
+          expect(err).to.equal(null);
+          expect(res.statusCode).to.be.equal(204);
+          expect(res.status).to.equal(204);
           expect(res.body).to.be.an('object');
           done(err);
         });
