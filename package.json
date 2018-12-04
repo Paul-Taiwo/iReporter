@@ -2,7 +2,7 @@
   "name": "iReporter-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "dev": "nodemon ./src/app --exec babel-node",
     "lint": "eslint ./src",
@@ -10,7 +10,8 @@
     "build": "babel ./src -d ./build",
     "start": "nodemon ./build/app",
     "test": "nyc cross-env NODE_ENV=test mocha --compilers js:babel-register ./src/tests/* --no-deprecation --exit",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build "
   },
   "keywords": [],
   "author": "Paul Taiwo <ayopaulot@gmail.com>",
