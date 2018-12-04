@@ -2,13 +2,13 @@
   "name": "iReporter-api",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "./src/app.js",
   "scripts": {
     "dev": "nodemon ./src/app --exec babel-node",
     "lint": "eslint ./src",
     "fix": "eslint ./src --fix",
-    "build": "babel ./src -d ./build",
-    "start": "nodemon ./build/app.js",
+    "build": "babel ./src -d ./build --source-maps",
+    "start": "node ./build/app",
     "test": "nyc cross-env NODE_ENV=test mocha --compilers js:babel-register ./src/tests/* --no-deprecation --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build "
