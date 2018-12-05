@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 app.use(logger('dev'));
 
+const PORT = process.env.PORT || 8080;
+
 app.use('/api/v1/', indexRoutes);
 app.use('/api/v1/red-flags', recordRoutes);
 
@@ -22,6 +24,6 @@ app.all('*', (req, res) => res.status(404).json({
   message: 'Not found',
 }));
 
-app.listen(8080, () => log.info(`Listening at port ${8080}`));
+app.listen(PORT, () => log.info('Listening at port', PORT));
 
 export default app;
