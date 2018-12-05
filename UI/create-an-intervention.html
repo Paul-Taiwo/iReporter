@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>iReporter | Create a red flag record</title>
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Poppins" rel="stylesheet">
+    <!-- Linear Icon -->
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+</head>
+<body>
+
+    <!-- Left side menu -->
+    <div id="side-menu"class="toggle">
+
+        <!-- Hide menu button -->
+        <button type="button" id="hideMenu" class="btn close-btn"><i class="lnr lnr-cross"></i></button>
+        <!-- End -->
+
+        <!-- Logo -->
+        <div class="logo p-t-15 p-b-15">
+            <h2 class="t-center">iReporter</h2>
+        </div>
+
+        <!-- Sidebar menu -->
+        <div class="sidebar-menu">
+           <ul id="side-list" class="list-inline">
+                <li><a href="index.html" class="active"><i class="lnr lnr-home"></i> Dashboard</a></li>
+                <li><a href="create-red-flag-record.html" class=""><i class="lnr lnr-flag"></i> Create a red flag record</a></li>
+                <li><a href="create-an-intervention.html" class=""><i class="lnr lnr-question-circle"></i> Create an intervention</a></li>
+                <li><a href="view-all-record.html" class=""><i class="lnr lnr-layers"></i> View all records</a></li>
+                <li><a href="sign-in.html" class=""><i class="lnr lnr-power-switch"></i> Logout</a></li>
+            </ul>           
+        </div>
+    </div>
+    <!-- End left side menu -->
+
+    <!-- Content -->
+    <div class="content-page">
+        <div class="content">
+
+            <!-- Top bar -->
+            <div class="topbar">
+                <nav class="navbar">
+
+                    <!-- Mobile button -->
+                    <button type="button" id="toggler" class="btn mobile-btn"><i class="lnr lnr-menu"></i></button>
+                    <!-- End -->
+
+                    <ul class="list-inline">
+                        <li class="app-search m-t-20 m-l-20">
+                            <form action="" role="search">
+                                <input type="search" name="" id="appSearch" placeholder="search.." class="control-input">
+                                <a class="search-icon" href="#">
+                                    <i class="lnr lnr-magnifier"></i>
+                                </a>
+                            </form>
+                        </li>
+                        <li class="dropdown">
+                            <!-- <p>Welcome</p> -->
+                            <button id="toggleDropdown" class="btns dropbtn">Paulot <i class="lnr lnr-chevron-down"></i></button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="update-profile.html"><i class="lnr lnr-user"></i>  Update Profile</a>
+                                <a href="change-passwrd.html"><i class="lnr lnr-cog"></i>  Change password</a>
+                                <a href="sign-in.html"><i class="lnr lnr-power-switch"></i>  Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Top bar ends -->
+
+            <!-- Page content wrapper-->
+            <div class="page-wrapper">
+                <div class="page-title-box">
+                    <h3 class="page-title">Create an intervention record</h3>
+                </div>
+
+                <div class="tabs t-center m-b-20">
+                    <button class="btns btn-round t-white tablinks active" onclick="openForm(event, '#formOne')">1</button>
+                    <button class="btns btn-round t-white tablinks" onclick="openForm(event, '#formTwo')">2</button>
+                    <!-- <button class="btns btn-round t-white tablinks">3</button> -->
+                </div>
+
+                <div class="tab-content">
+                    <div id="formOne" class="tabcontent"><!-- Content one -->
+                        <div class="card">
+                            <div class="card-wrap">
+                                <form action="#" method="get">
+
+                                    <div class="m-b-10">
+                                        <label for="name">*Record Name: </label>
+                                        <input type="text" class="control-input" name="" id="" required>
+                                    </div>
+
+                                    <div class="m-b-10">
+                                        <label for="type of corruption">Type of intervention: </label>
+                                        <input type="text" class="control-input" name="" id="" required>
+                                    </div>
+
+                                    <div class="m-b-10">
+                                        <label for="name">*When did it happen? </label>
+                                        <input type="date" class="control-input" name="" id="" required>
+                                    </div>
+
+                                    <div class="m-b-10">
+                                        <label for="name">*Description </label>
+                                        <textarea name="" class="control-input text-area" id="" cols="30" rows="10" required></textarea>
+                                    </div>
+
+                                    <div class="t-center">
+                                            <button class="btns btn-danger" type="submit">Save and continue</button>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="formTwo" class="tabcontent"><!-- Content two -->
+                        <div class="card">
+                            <div class="card-wrap">
+                                <form action="#" method="get">
+
+                                    <label for="type of corruption">Can you provide Images? </label>
+                                    <div class="m-b-5">
+                                        <input type="radio" class="" name="yesorno" id="">
+                                        <label for="yes">Yes</label>
+
+                                        <input type="radio" class="" name="yesorno" id="">
+                                        <label for="no">No</label>
+
+                                    </div>
+
+                                    <div class="m-b-5">
+                                        <input type="file" class="" accept="image/*" placeholder="" name="" id="">
+                                    </div>
+
+                                    <label for="type of corruption">Can you provide Video(s)? </label>
+                                    <div class="m-b-5">
+                                        <input type="radio" class="" name="yesorno" id="">
+                                        <label for="yes">Yes</label>
+
+                                        <input type="radio" class="" name="yesorno" id="">
+                                        <label for="no">No</label>
+
+                                    </div>
+
+                                    <div class="m-b-5">
+                                        <input type="file" class="" accept="video/*" placeholder="" name="" id="">
+                                    </div>
+                                   
+
+                                    <div class="m-b-10">
+                                        <label for="name">Add location </label>
+                                        <input type="text" class="control-input" name="" id="">
+                                    </div>
+
+                                    <div class="t-center">
+                                        <button class="btns btn-danger">Submit</button>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Page content ends -->
+        </div>
+    </div>
+    <!-- End content -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p> &copy; 2018 Andela-iReporter</p>
+    </footer>
+    <!-- End footer -->
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
