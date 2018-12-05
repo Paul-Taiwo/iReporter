@@ -1,6 +1,6 @@
 const allRecords = [];
 
-const create = (data = null) => {
+const createIncidence = (data = null) => {
   if (!data) {
     throw new Error('Please provide an object');
   }
@@ -9,8 +9,9 @@ const create = (data = null) => {
     id: allRecords.length + 1,
     ...data,
     status: 'pending',
-    createdAt: new Date(),
-    updatedAt: '',
+    createdOn: new Date(),
+    updatedOn: '',
+    message: 'Created red-flag record succesfully',
   };
 
   allRecords.push(dataToCreate);
@@ -28,10 +29,20 @@ const update = (id, data) => {
   allRecords[index].name = data.name;
   allRecords[index].images = data.images;
   allRecords[index].videos = data.videos;
-  allRecords[index].geolocation = data.geolocation;
+  allRecords[index].message = new Date();
   allRecords[index].updatedAt = new Date();
 
   return allRecords[index];
+};
+
+const updateLocation = (id, data) => {
+  const index2 = allRecords.indexOf(findOne(id));
+
+  allRecords[index2].location = data;
+  allRecords[index2].message = 'Updated location';
+
+  console.log(data);
+  return allRecords[index2];
 };
 
 const delRecord = (id, data) => {
@@ -43,17 +54,19 @@ const delRecord = (id, data) => {
 };
 
 export {
-  create,
+  createIncidence,
   findAll,
   findOne,
   update,
+  updateLocation,
   delRecord,
 };
 
 export default {
-  create,
+  createIncidence,
   findAll,
   findOne,
   update,
+  updateLocation,
   delRecord,
 };

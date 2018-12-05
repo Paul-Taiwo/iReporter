@@ -5,15 +5,17 @@ const { Record } = models;
 class Records {
   static createRecord(req, res) {
     const {
-      name, type, images, videos, geolocation,
+      name, createdBy, type, images, videos, location, comment,
     } = req.body;
 
-    const create = Record.create({
+    const create = Record.createIncidence({
       name,
+      createdBy,
       type,
       images,
       videos,
-      geolocation,
+      location,
+      comment,
     });
 
 
@@ -51,6 +53,15 @@ class Records {
     return res.status(200).json({
       status: 200,
       data: [updateRecord],
+    });
+  }
+
+  static updateLocation(req, res) {
+    console.log('=========>', req.params.location);
+    const updateLocation = Record.updateLocation(req.params.id, req.params.location);
+    return res.status(200).json({
+      status: 200,
+      data: [updateLocation],
     });
   }
 
