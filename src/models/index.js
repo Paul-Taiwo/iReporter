@@ -1,11 +1,14 @@
-import { create, findAll, findOne, update, delRecord } from './record';
+import {
+  createIncidence, findAll, findOne, update, delRecord, updateLocation,
+} from './record';
 
 const models = {
   Record: {
-    create,
+    createIncidence,
     findAll,
     findOne,
     update,
+    updateLocation,
     delRecord,
   },
 };

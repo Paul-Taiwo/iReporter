@@ -6,16 +6,17 @@ import app from '../app';
 
 chai.use(chaiHttp);
 
-describe('red-flags Controller', () => {
+describe('red-flags/ Controller', () => {
   it('should create new record', (done) => {
     chai
       .request(app)
-      .post('/api/v1/red-flags')
+      .post('/api/v1/red-flags/')
       .set({
         'Content-type': 'application/json',
       })
       .send({
         name: 'Bribery and Corruption',
+        createdBy: 'Paulot',
         type: 'redFlag',
         images: [
           'image.png',
@@ -25,7 +26,8 @@ describe('red-flags Controller', () => {
           'videos.mp4',
           'videos.avi',
         ],
-        geolocation: '1.2343 -4.38938',
+        location: 'Ayobo',
+        comment: 'He recieved bribe',
       })
       .end((err, res) => {
         expect(res.body).to.be.an('object');
@@ -42,12 +44,13 @@ describe('red-flags Controller', () => {
   it('should not create without name', (done) => {
     chai
       .request(app)
-      .post('/api/v1/red-flags')
+      .post('/api/v1/red-flags/')
       .set({
         'Content-type': 'application/json',
       })
       .send({
         name: '',
+        createdBy: 'Paulot',
         type: 'redFlag',
         images: [
           'image.png',
@@ -57,7 +60,8 @@ describe('red-flags Controller', () => {
           'videos.mp4',
           'videos.avi',
         ],
-        geolocation: '1.2343 -4.38938',
+        location: 'Ayobo',
+        comment: 'He recieved bribe',
       })
       .end((err, res) => {
         expect(res.body).to.be.an('object');
@@ -71,12 +75,13 @@ describe('red-flags Controller', () => {
   it('should not create without type', (done) => {
     chai
       .request(app)
-      .post('/api/v1/red-flags')
+      .post('/api/v1/red-flags/')
       .set({
         'Content-type': 'application/json',
       })
       .send({
         name: 'Bribery and Corruption',
+        createdBy: 'Paulot',
         type: '',
         images: [
           'image.png',
@@ -86,7 +91,8 @@ describe('red-flags Controller', () => {
           'videos.mp4',
           'videos.avi',
         ],
-        geolocation: '1.2343 -4.38938',
+        location: 'Ayobo',
+        comment: 'He recieved bribe',
       })
       .end((err, res) => {
         expect(res.body).to.be.an('object');
@@ -97,19 +103,27 @@ describe('red-flags Controller', () => {
       });
   });
 
-  it('should not create without geolocation', (done) => {
+  it('should not create without location', (done) => {
     chai
       .request(app)
-      .post('/api/v1/red-flags')
+      .post('/api/v1/red-flags/')
       .set({
         'Content-type': 'application/json',
       })
       .send({
-        name: 'Bad roads',
-        type: 'intervention',
-        images: [],
-        videos: [],
-        geolocation: '',
+        name: 'Bribery and Corruption',
+        createdBy: 'Paulot',
+        type: 'redFlag',
+        images: [
+          'image.png',
+          'image.jpg',
+        ],
+        videos: [
+          'videos.mp4',
+          'videos.avi',
+        ],
+        location: '',
+        comment: 'He recieved bribe',
       })
       .end((err, res) => {
         expect(res.body).to.be.an('object');
@@ -120,19 +134,83 @@ describe('red-flags Controller', () => {
       });
   });
 
-  it('should create without image or video', (done) => {
+  it('should not create without the name of the creator', (done) => {
     chai
       .request(app)
-      .post('/api/v1/red-flags')
+      .post('/api/v1/red-flags/')
       .set({
         'Content-type': 'application/json',
       })
       .send({
         name: 'Bribery and Corruption',
+        createdBy: '',
+        type: 'redFlag',
+        images: [
+          'image.png',
+          'image.jpg',
+        ],
+        videos: [
+          'videos.mp4',
+          'videos.avi',
+        ],
+        location: 'Ayobo',
+        comment: 'He recieved bribe',
+      })
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.statusCode).to.equal(400);
+        expect(res.body.error).to.equal('Please provide your name');
+        expect(res.body.status).to.equal(400);
+        done();
+      });
+  });
+
+  it('should not create without a comment', (done) => {
+    chai
+      .request(app)
+      .post('/api/v1/red-flags/')
+      .set({
+        'Content-type': 'application/json',
+      })
+      .send({
+        name: 'Bribery and Corruption',
+        createdBy: 'Paulot',
+        type: 'redFlag',
+        images: [
+          'image.png',
+          'image.jpg',
+        ],
+        videos: [
+          'videos.mp4',
+          'videos.avi',
+        ],
+        location: 'Ayobo',
+        comment: '',
+      })
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.statusCode).to.equal(400);
+        expect(res.body.error).to.equal('Please comment');
+        expect(res.body.status).to.equal(400);
+        done();
+      });
+  });
+
+  it('should create without image or video', (done) => {
+    chai
+      .request(app)
+      .post('/api/v1/red-flags/')
+      .set({
+        'Content-type': 'application/json',
+      })
+      .send({
+        name: 'Bribery and Corruption',
+        createdBy: 'Paulot',
         type: 'redFlag',
         images: [],
         videos: [],
-        geolocation: '1.2343 -4.38938',
+        location: 'Ayobo',
+        comment: 'He recieved bribe',
       })
       .end((err, res) => {
         expect(res.body).to.be.an('object');
@@ -146,11 +224,11 @@ describe('red-flags Controller', () => {
       });
   });
 
-  describe('Get all red-flags', () => {
-    it('should get all red-flags', (done) => {
+  describe('Get all red-flags/', () => {
+    it('should get all red-flags/', (done) => {
       chai
         .request(app)
-        .get('/api/v1/red-flags')
+        .get('/api/v1/red-flags/')
         .set({
           'Content-type': 'application/json',
         })
@@ -169,7 +247,7 @@ describe('red-flags Controller', () => {
     it('should get a specific record', (done) => {
       chai
         .request(app)
-        .get('/api/v1/red-flags/:id')
+        .get('/api/v1/red-flags//:id')
         .set({
           'Content-type': 'application/json',
         })
@@ -189,7 +267,7 @@ describe('red-flags Controller', () => {
     it('should update record', (done) => {
       chai
         .request(app)
-        .patch('/api/v1/red-flags/:id')
+        .patch('/api/v1/red-flags//:id')
         .set({
           'Content-type': 'application/json',
         })
@@ -205,7 +283,7 @@ describe('red-flags Controller', () => {
     it('should delete a record', (done) => {
       chai
         .request(app)
-        .delete('/api/v1/red-flags/:id')
+        .delete('/api/v1/red-flags//:id')
         .set({
           'Content-type': 'application/json',
         })
