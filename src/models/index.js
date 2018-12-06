@@ -1,5 +1,5 @@
 import {
-  createIncidence, findAll, findOne, update, delRecord, updateLocation, allRecords,
+  createIncidence, findAll, findOne, delRecord, updateLocation, allRecords,
 } from './record';
 
 const models = {
@@ -7,7 +7,6 @@ const models = {
     createIncidence,
     findAll,
     findOne,
-    update,
     updateLocation,
     delRecord,
     allRecords,

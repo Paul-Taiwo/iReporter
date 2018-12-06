@@ -263,44 +263,11 @@ describe('red-flags/ Controller', () => {
     });
   });
 
-  describe('Update a Record', () => {
-    it('should update record', (done) => {
-      chai
-        .request(app)
-        .patch('/api/v1/red-flags/:id')
-        .set({
-          'Content-type': 'application/json',
-        })
-        .send({
-          name: 'Bribery and Corruption',
-          createdBy: 'Paulot',
-          type: 'redFlag',
-          images: [
-            'image.png',
-            'image.jpg',
-          ],
-          videos: [
-            'videos.mp4',
-            'videos.avi',
-          ],
-          location: 'Ayobo',
-          comment: 'He recieved bribe',
-        })
-        .end((err, res) => {
-          expect(err).to.equal(null);
-          expect(res.statusCode).to.equal(200);
-          expect(res.body.status).to.equal(200);
-          expect(res.body).to.be.an('object');
-          done(err);
-        });
-    });
-  });
-
   describe('Delete a Record', () => {
     it('should delete a record', (done) => {
       chai
         .request(app)
-        .delete('/api/v1/red-flags//:id')
+        .delete('/api/v1/red-flags/:id')
         .set({
           'Content-type': 'application/json',
         })
@@ -309,78 +276,16 @@ describe('red-flags/ Controller', () => {
           expect(res.statusCode).to.be.equal(200);
           expect(res.status).to.equal(200);
           expect(res.body).to.be.an('object');
-          done(err);
+          done();
         });
     });
   });
 
   describe('Record Update', () => {
-    it('should not update without name', (done) => {
-      chai
-        .request(app)
-        .patch('/api/v1/red-flags/:id')
-        .set({
-          'Content-type': 'application/json',
-        })
-        .send({
-          name: '',
-          createdBy: 'Paulot',
-          type: 'redFlag',
-          images: [
-            'image.png',
-            'image.jpg',
-          ],
-          videos: [
-            'videos.mp4',
-            'videos.avi',
-          ],
-          location: 'Ayobo',
-          comment: 'He recieved bribe',
-        })
-        .end((err, res) => {
-          expect(res.body).to.be.an('object');
-          expect(res.statusCode).to.equal(400);
-          expect(res.body.error).to.equal('Please provide a valid record name');
-          expect(res.body.status).to.equal(400);
-          done();
-        });
-    });
-
-    it('should not update without type', (done) => {
-      chai
-        .request(app)
-        .patch('/api/v1/red-flags/:id')
-        .set({
-          'Content-type': 'application/json',
-        })
-        .send({
-          name: 'Bribery and Corruption',
-          createdBy: 'Paulot',
-          type: '',
-          images: [
-            'image.png',
-            'image.jpg',
-          ],
-          videos: [
-            'videos.mp4',
-            'videos.avi',
-          ],
-          location: 'Ayobo',
-          comment: 'He recieved bribe',
-        })
-        .end((err, res) => {
-          expect(res.body).to.be.an('object');
-          expect(res.statusCode).to.equal(400);
-          expect(res.body.error).to.equal('Please provide a valid record type');
-          expect(res.body.status).to.equal(400);
-          done();
-        });
-    });
-
     it('should not update without location', (done) => {
       chai
         .request(app)
-        .patch('/api/v1/red-flags/:id')
+        .patch('/api/v1/red-flags/:id/location')
         .set({
           'Content-type': 'application/json',
         })
@@ -403,68 +308,6 @@ describe('red-flags/ Controller', () => {
           expect(res.body).to.be.an('object');
           expect(res.statusCode).to.equal(400);
           expect(res.body.error).to.equal('Please provide a valid location');
-          expect(res.body.status).to.equal(400);
-          done();
-        });
-    });
-
-    it('should not update without the name of the creator', (done) => {
-      chai
-        .request(app)
-        .patch('/api/v1/red-flags/:id')
-        .set({
-          'Content-type': 'application/json',
-        })
-        .send({
-          name: 'Bribery and Corruption',
-          createdBy: '',
-          type: 'redFlag',
-          images: [
-            'image.png',
-            'image.jpg',
-          ],
-          videos: [
-            'videos.mp4',
-            'videos.avi',
-          ],
-          location: 'Ayobo',
-          comment: 'He recieved bribe',
-        })
-        .end((err, res) => {
-          expect(res.body).to.be.an('object');
-          expect(res.statusCode).to.equal(400);
-          expect(res.body.error).to.equal('Please provide your name');
-          expect(res.body.status).to.equal(400);
-          done();
-        });
-    });
-
-    it('should not update without a comment', (done) => {
-      chai
-        .request(app)
-        .patch('/api/v1/red-flags/:id')
-        .set({
-          'Content-type': 'application/json',
-        })
-        .send({
-          name: 'Bribery and Corruption',
-          createdBy: 'Paulot',
-          type: 'redFlag',
-          images: [
-            'image.png',
-            'image.jpg',
-          ],
-          videos: [
-            'videos.mp4',
-            'videos.avi',
-          ],
-          location: 'Ayobo',
-          comment: '',
-        })
-        .end((err, res) => {
-          expect(res.body).to.be.an('object');
-          expect(res.statusCode).to.equal(400);
-          expect(res.body.error).to.equal('Please comment');
           expect(res.body.status).to.equal(400);
           done();
         });

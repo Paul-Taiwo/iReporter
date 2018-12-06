@@ -4,7 +4,8 @@ const { Record } = models;
 
 class Records {
   static createRecord(req, res) {
-    let name; let location;
+    let name; let
+      location;
 
     if (req.body.name.match(/\s/g)) {
       name = req.body.name.replace(/\s/g, '');
@@ -12,6 +13,8 @@ class Records {
 
     if (req.body.location.match(/^\s+|\s+$/g)) {
       location = req.body.location.replace(/^\s+|\s+$/g, '');
+    } else {
+      location = req.body.location;
     }
 
     const {
@@ -56,16 +59,17 @@ class Records {
     });
   }
 
-  static update(req, res) {
-    const updateRecord = Record.update(req.params.id, req.body);
-    return res.status(200).json({
-      status: 200,
-      data: [updateRecord],
-    });
-  }
+  // static update(req, res) {
+  //   const updateRecord = Record.update(req.params.id, req.body);
+  //   return res.status(200).json({
+  //     status: 200,
+  //     data: [updateRecord],
+  //   });
+  // }
 
   static updateLocation(req, res) {
-    const updateLocation = Record.updateLocation(req.params.id, req.params.location);
+    const updateLocation = Record.updateLocation(req.params.id, req.body.location);
+
     return res.status(200).json({
       status: 200,
       data: [updateLocation],

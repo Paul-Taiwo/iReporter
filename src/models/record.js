@@ -24,25 +24,25 @@ const findAll = () => allRecords;
 
 const findOne = id => allRecords.find(record => record.id == id);
 
-const update = (id, data) => {
-  const index = allRecords.indexOf(findOne(id));
+// const update = (id, data) => {
+//   const index = allRecords.indexOf(findOne(id));
 
-  allRecords[index].name = data.name;
-  allRecords[index].images = data.images;
-  allRecords[index].videos = data.videos;
-  allRecords[index].message = new Date();
-  allRecords[index].updatedAt = new Date();
+//   allRecords[index].name = data.name;
+//   allRecords[index].images = data.images;
+//   allRecords[index].videos = data.videos;
+//   allRecords[index].message = new Date();
+//   allRecords[index].updatedAt = new Date();
 
-  return allRecords[index];
-};
+//   return allRecords[index];
+// };
 
 const updateLocation = (id, data) => {
-  const index2 = allRecords.indexOf(findOne(id));
+  const index = allRecords.indexOf(findOne(id));
 
-  allRecords[index2].location = data;
-  allRecords[index2].message = 'Updated location';
+  allRecords[index].location = data;
+  allRecords[index].message = 'Updated red-flag record’s location';
 
-  return allRecords[index2];
+  return allRecords[index];
 };
 
 const delRecord = (id, data) => {
@@ -57,7 +57,6 @@ export {
   createIncidence,
   findAll,
   findOne,
-  update,
   updateLocation,
   delRecord,
   allRecords,
