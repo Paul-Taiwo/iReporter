@@ -16,8 +16,8 @@ describe('API Endpoints', () => {
       .end((err, res) => {
         expect(res.body).to.be.an('object');
         expect(res.statusCode).to.equal(404);
-        expect(res.body.message).equal('Not found');
-        expect(res.body.status).to.equal('error');
+        expect(res.body.error).equal('Not found');
+        expect(res.body.status).to.equal(404);
         done();
       });
   });

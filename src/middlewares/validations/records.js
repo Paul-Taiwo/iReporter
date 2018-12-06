@@ -1,3 +1,7 @@
+import models from '../../models/index';
+
+const { Record } = models;
+
 class RecordsValidate {
   static createRecord(req, res, next) {
     const {
@@ -39,6 +43,16 @@ class RecordsValidate {
       });
     }
 
+    return next();
+  }
+
+  static checkId(req, res, next) {
+    if (req.params.id > Record.allRecords.length) {
+      return res.status(400).json({
+        status: 400,
+        error: 'Couldn\'t find a record with the ID',
+      });
+    }
     return next();
   }
 }
