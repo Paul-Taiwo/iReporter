@@ -34,22 +34,23 @@ class Records {
 
   static getAll(req, res) {
     const findAll = Record.findAll();
-    return res.status(201).json({
-      status: 201,
+    return res.status(200).json({
+      status: 200,
       data: findAll,
     });
   }
 
   static getOne(req, res) {
     const findOne = Record.findOne(req.params.id);
-    return res.status(201).json({
-      status: 201,
+    return res.status(200).json({
+      status: 200,
       data: [findOne],
     });
   }
 
   static update(req, res) {
     const updateRecord = Record.update(req.params.id, req.body);
+    console.log('===========>', res.status);
     return res.status(200).json({
       status: 200,
       data: [updateRecord],
@@ -57,7 +58,6 @@ class Records {
   }
 
   static updateLocation(req, res) {
-    console.log('=========>', req.params.location);
     const updateLocation = Record.updateLocation(req.params.id, req.params.location);
     return res.status(200).json({
       status: 200,
@@ -66,10 +66,10 @@ class Records {
   }
 
   static delete(req, res) {
-    const del = Record.delRecord(req.params.id);
-    return res.status(204).json({
-      status: 204,
-      data: [del],
+    Record.delRecord(req.params.id);
+    return res.status(200).json({
+      status: 200,
+      message: 'red-flag record has been deleted',
     });
   }
 }

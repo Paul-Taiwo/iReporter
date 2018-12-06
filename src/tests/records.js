@@ -235,8 +235,8 @@ describe('red-flags/ Controller', () => {
         .end((err, res) => {
           expect(err).to.equal(null);
           expect(res.body).to.be.an('object');
-          expect(res.statusCode).to.equal(201);
-          expect(res.body.status).to.equal(201);
+          expect(res.statusCode).to.equal(200);
+          expect(res.body.status).to.equal(200);
           expect(res.body.data).to.be.an('array');
           done();
         });
@@ -254,8 +254,8 @@ describe('red-flags/ Controller', () => {
         .end((err, res) => {
           expect(err).to.equal(null);
           expect(res.body).to.be.an('object');
-          expect(res.statusCode).to.equal(201);
-          expect(res.body.status).to.equal(201);
+          expect(res.statusCode).to.equal(200);
+          expect(res.body.status).to.equal(200);
           expect(res.body.data).to.be.an('array');
           expect(res.body.data.length).to.equal(1);
           done();
@@ -288,6 +288,8 @@ describe('red-flags/ Controller', () => {
         })
         .end((err, res) => {
           expect(err).to.equal(null);
+          expect(res.statusCode).to.equal(200);
+          expect(res.body.status).to.equal(200);
           expect(res.body).to.be.an('object');
           done(err);
         });
@@ -304,8 +306,8 @@ describe('red-flags/ Controller', () => {
         })
         .end((err, res) => {
           expect(err).to.equal(null);
-          expect(res.statusCode).to.be.equal(204);
-          expect(res.status).to.equal(204);
+          expect(res.statusCode).to.be.equal(200);
+          expect(res.status).to.equal(200);
           expect(res.body).to.be.an('object');
           done(err);
         });

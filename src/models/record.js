@@ -60,13 +60,5 @@ export {
   update,
   updateLocation,
   delRecord,
-};
-
-export default {
-  createIncidence,
-  findAll,
-  findOne,
-  update,
-  updateLocation,
-  delRecord,
+  allRecords,
 };
