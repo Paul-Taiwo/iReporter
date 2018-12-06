@@ -8,6 +8,7 @@ const createIncidence = (data = null) => {
   const dataToCreate = {
     id: allRecords.length + 1,
     ...data,
+    type: 'red-flag',
     status: 'pending',
     createdOn: new Date(),
     updatedOn: '',
@@ -41,7 +42,6 @@ const updateLocation = (id, data) => {
   allRecords[index2].location = data;
   allRecords[index2].message = 'Updated location';
 
-  console.log(data);
   return allRecords[index2];
 };
 

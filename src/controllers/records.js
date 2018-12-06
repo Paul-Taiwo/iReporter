@@ -4,20 +4,28 @@ const { Record } = models;
 
 class Records {
   static createRecord(req, res) {
+    let name; let location;
+
+    if (req.body.name.match(/\s/g)) {
+      name = req.body.name.replace(/\s/g, '');
+    }
+
+    if (req.body.location.match(/^\s+|\s+$/g)) {
+      location = req.body.location.replace(/^\s+|\s+$/g, '');
+    }
+
     const {
-      name, createdBy, type, images, videos, location, comment,
+      createdBy, images, videos, comment,
     } = req.body;
 
     const create = Record.createIncidence({
       name,
       createdBy,
-      type,
       images,
       videos,
       location,
       comment,
     });
-
 
     if (Object.keys(create).length < 1) {
       return res.status(500).json({
@@ -50,7 +58,6 @@ class Records {
 
   static update(req, res) {
     const updateRecord = Record.update(req.params.id, req.body);
-    console.log('===========>', res.status);
     return res.status(200).json({
       status: 200,
       data: [updateRecord],
