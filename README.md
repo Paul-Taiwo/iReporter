@@ -37,20 +37,23 @@ intervention location
 ## Technologies
 * Nodejs
 * Express
-* Eslint, Babel, Mocha, Chai  
+* Eslint
+* Babel
+* Mocha
+* Chai  
 
 ## Base URL
 https://i--reporter.herokuapp.com/api/v1/
 
 ## API Endpoints
-| Request    | Endpoint                       | Action                             | Description                   
-| :------- | :------------------------------  | :--------------------------------- | :---------------------------- |
-| POST     | /api/v1/red-flags                | Creates a red-flag record          |                               |
-| GET      | /api/v1/red-flags                | Gets all red-flag record           |                               |
-| GET      | /api/v1/red-flags/<id>           | Fetch a specific red-flag record   | `id` should be record id      |
-| PATCH    | /api/v1/red-flags/<id>/location  | Update red-flag location           | `id` should be record id      |
-| PATCH    | /api/v1/red-flags/<id>/comment   | Update red-flag comment            | `id` should be record id      |
-| DELETE   | /api/v1/red-flags/<id>           | Delete a specific red-flag record  | `id` should be record id      |
+| Request   | Endpoint                         | Action                                          
+
+| POST     :- /api/v1/red-flags                => Creates a red-flag record         
+| GET      :- /api/v1/red-flags                => Gets all red-flag record           
+| GET      :- /api/v1/red-flags/<id>           => Fetch a specific red-flag record   
+| PATCH    :- /api/v1/red-flags/<id>/location  => Update red-flag location           
+| PATCH    :- /api/v1/red-flags/<id>/comment   => Update red-flag comment           
+| DELETE   :- /api/v1/red-flags/<id>           => Delete a specific red-flag record  
 
 ## Setting up locally
 1. Clone this repository  
