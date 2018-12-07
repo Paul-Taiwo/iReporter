@@ -10,6 +10,7 @@ const createIncidence = (data = null) => {
     ...data,
     type: 'red-flag',
     status: 'pending',
+    createdBy: 1223,
     createdOn: new Date(),
     updatedOn: '',
     message: 'Created red-flag record succesfully',
