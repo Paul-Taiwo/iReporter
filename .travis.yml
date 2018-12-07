@@ -8,6 +8,7 @@ sudo: false
 install:
   - npm install -q --no-color --no-progress
   - npm install -g codecov
+  - npm install --save-dev istanbul
 
 addons:
   chrome: stable
