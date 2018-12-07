@@ -1,9 +1,3 @@
-// Dropdown toggle
-    document.querySelector("#toggleDropdown").addEventListener("click", (e) => {
-        e.preventDefault;
-        document.querySelector("#myDropdown").classList.toggle("show");
-    });
-
 //Menu toggle
 document.querySelector("#toggler").addEventListener("click", (e) => {
     e.preventDefault;
@@ -14,6 +8,13 @@ document.querySelector("#hideMenu").addEventListener("click", (e) => {
     e.preventDefault;
     document.querySelector("#side-menu").style.left="-240px";
 });
+
+
+// Dropdown toggle
+    document.querySelector("#toggleDropdown").addEventListener("click", (e) => {
+        e.preventDefault;
+        document.querySelector("#myDropdown").classList.toggle("show");
+    });
 
 // Toggle side menu active class
 let sideLinks = document.querySelectorAll("#side-list li a");
