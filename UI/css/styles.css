@@ -1,9 +1,6 @@
-
+/* General */
 .row {
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
 } 
@@ -19,8 +16,6 @@
 .list-inline {
     list-style-type: none;
 }
-
-/* General */
 * {
     margin: 0;
     padding: 0;
@@ -109,6 +104,19 @@ a {
     cursor: pointer;
 }
 
+.btn-black-outline {
+    border: 1px solid #fff;
+    background-color: #0f0f12;
+    color: #fff;
+    transition: .3s;
+}
+
+.btn-black-outline:hover {
+    border: 1px solid #0f0f12;
+    background-color: #fff;
+    color: #0f0f12;
+}
+
 .btn-round {
     border-radius: 50%;
 }
@@ -130,6 +138,16 @@ a {
     background-color: #007bff;
 }
 
+.btn-gold {
+    background-color: #ff9900;
+}
+
+.btn-gold-r {
+    border: 1px solid #ff9900;
+    background-color: #ffffff;
+    color: #ff9900;
+}
+
 .btn-disabled {
     cursor: not-allowed;
     opacity: 0.67;
@@ -138,6 +156,7 @@ a {
 .btn-danger,
 .btn-info,
 .btn-leaf,
+.btn-gold,
 .tabs button.active {
     color: #ffffff;
     transition: ease .9s;
@@ -216,6 +235,10 @@ a {
     padding-bottom: 15px;
 }
 
+.p-l-30 {
+    padding-left: 30px;
+}
+
 /* Margins */
 .m-0 {
     margin: 0;
@@ -230,6 +253,10 @@ a {
 }
 
 .m-r-15 {
+    margin-right: 15px;
+}
+
+.m-r-20 {
     margin-right: 15px;
 }
 
@@ -375,12 +402,9 @@ a {
 /* Card */
 .card {
     position: relative;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-direction: column;
     flex-direction: column;
     min-width: 0;
-    word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
@@ -451,9 +475,20 @@ a {
     color:  #5b6be8;
 }
 
+.log-sign {
+    position: absolute;
+    right: 2%;
+    top: 21px;
+}
+
 /* Content page */
 .content-page {
     margin-left: 240px;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.content-page-full {
     min-height: 500px;
     overflow: hidden;
 }
@@ -470,12 +505,27 @@ a {
     width: 40px;
 }
 
+.hero {
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/melany-rochester-777911-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 500px;
+}
+
+.hero-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 /* Nav bar */
 nav.navbar {
     width: 100%;
     height: 80px;
     background-color: #0f0f12;
-    display: -ms-flexbox;     
     display: flex;
 }
 
@@ -593,6 +643,10 @@ th.width-50 {
     padding: 20px 30px;
 }
 
+.footer-full {
+    left: 0;
+}
+
 /* Media queries */
 @media only screen and (max-width: 770px){
 
@@ -653,6 +707,10 @@ th.width-50 {
         max-width: 100%;
     }
 
+    .log-sign {
+        display: none;
+    }
+
     .footer {
         left: 0;
     }
@@ -660,13 +718,11 @@ th.width-50 {
 
 @media only screen and (min-width: 768px){
     .c-md-12 {
-        -ms-flex: 0 0 100%;
         flex: 0 0 100%;
         max-width: 100%;
     }
 
     .c-md-6 {
-        -ms-flex: 0 0 50%;
         flex: 0 0 50%;
         max-width: 50%;
     }
@@ -674,38 +730,36 @@ th.width-50 {
 
 @media only screen and (min-width: 576px){
     .c-sm-6 {
-        -ms-flex: 0 0 50%;
         flex: 0 0 50%;
         max-width: 50%;
     }
 
     .c-sm-7 {
-        -ms-flex: 0 0 58.333333%;
         flex: 0 0 58.333333%;
         max-width: 58.333333%;
     }
 
     .c-sm-5 {
-        -ms-flex: 0 0 41.666667%;
         flex: 0 0 41.666667%;
         max-width: 41.666667%;
     }
     
     .c-sm-12 {
-        -ms-flex: 0 0 100%;
         flex: 0 0 100%;
         max-width: 100%;
+    }
+
+    .display-none-mobile {
+        display: none;
     }
 }
 
 @media only screen and (min-width: 1200px){
     .c-xl-6 {
-        -ms-flex: 0 0 50%;
         flex: 0 0 50%;
         max-width: 50%;
     }
     .c-xl-3 {
-        -ms-flex: 0 0 25%;
         flex: 0 0 25%;
         max-width: 25%;
     }
