@@ -76,6 +76,15 @@ class Records {
     });
   }
 
+  static updateComment(req, res) {
+    const updateComment = Record.updateComment(req.params.id, req.body.comment);
+
+    return res.status(200).json({
+      status: 200,
+      data: [updateComment],
+    });
+  }
+
   static delete(req, res) {
     Record.delRecord(req.params.id);
     return res.status(200).json({

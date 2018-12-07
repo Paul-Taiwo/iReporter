@@ -19,10 +19,12 @@ const PORT = process.env.PORT || 8080;
 app.use('/api/v1/', indexRoutes);
 app.use('/api/v1/red-flags', recordRoutes);
 
-app.all('*', (req, res) => res.status(404).json({
-  status: 404,
-  error: 'Not found',
-}));
+app.all('*', (req, res) => {
+  return res.status(404).json({
+    status: 404,
+    error: 'Bad request',
+  });
+});
 
 
 app.listen(PORT, () => log.info('Listening at port', PORT));

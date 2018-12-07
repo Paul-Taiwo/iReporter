@@ -16,7 +16,7 @@ describe('API Endpoints', () => {
       .end((err, res) => {
         expect(res.body).to.be.an('object');
         expect(res.statusCode).to.equal(404);
-        expect(res.body.error).equal('Not found');
+        expect(res.body.error).equal('Bad request');
         expect(res.body.status).to.equal(404);
         done();
       });
