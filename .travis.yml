@@ -7,12 +7,12 @@ sudo: false
 
 install:
   - npm install -q --no-color --no-progress
-  - npm install -g codecov
-  - npm install --save-dev istanbul
   
 script: 
-  - npm test
-  - codecov
+   - nyc --reporter=lcov npm run test
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 after success: 
   - npm run coverage
