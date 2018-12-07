@@ -312,5 +312,36 @@ describe('red-flags/ Controller', () => {
           done();
         });
     });
+
+    it('should not update without a comment', (done) => {
+      chai
+        .request(app)
+        .patch('/api/v1/red-flags/:id/comment')
+        .set({
+          'Content-type': 'application/json',
+        })
+        .send({
+          name: 'Bribery and Corruption',
+          createdBy: 'Paulot',
+          type: 'redFlag',
+          images: [
+            'image.png',
+            'image.jpg',
+          ],
+          videos: [
+            'videos.mp4',
+            'videos.avi',
+          ],
+          location: 'Ayobo',
+          comment: '',
+        })
+        .end((err, res) => {
+          expect(res.body).to.be.an('object');
+          expect(res.statusCode).to.equal(400);
+          expect(res.body.error).to.equal('Please comment');
+          expect(res.body.status).to.equal(400);
+          done();
+        });
+    });
   });
 });

@@ -45,6 +45,15 @@ const updateLocation = (id, data) => {
   return allRecords[index];
 };
 
+const updateComment = (id, data) => {
+  const CommentIndex = allRecords.indexOf(findOne(id));
+
+  allRecords[CommentIndex].comment = data;
+  allRecords[CommentIndex].message = 'Updated red-flag record’s comment';
+
+  return allRecords[CommentIndex];
+};
+
 const delRecord = (id, data) => {
   const index = allRecords.indexOf(findOne(id));
 
@@ -58,6 +67,7 @@ export {
   findAll,
   findOne,
   updateLocation,
+  updateComment,
   delRecord,
   allRecords,
 };

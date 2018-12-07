@@ -11,6 +11,7 @@ Route.post('/', RecordValidations.createRecord, RecordController.createRecord);
 Route.get('/', RecordController.getAll);
 Route.get('/:id', RecordValidations.checkId, RecordController.getOne);
 Route.patch('/:id/location', RecordValidations.createRecord, RecordController.updateLocation);
+Route.patch('/:id/comment', RecordValidations.createRecord, RecordController.updateLocation);
 Route.delete('/:id', RecordController.delete);
 
 Route.get('/:id');
