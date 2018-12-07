@@ -10,7 +10,7 @@
     "build": "babel ./src -d ./build --source-maps",
     "start": "node ./build/app",
     "test": "nyc cross-env NODE_ENV=test --reporter=html mocha --compilers js:babel-register ./src/tests/* --no-deprecation --exit",
-    "coverage": "nyc report --reporter=lcov --reporter=text-lcov | coveralls",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build"
   },
   "repository": {
@@ -36,6 +36,7 @@
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "codecov": "^3.1.0",
     "coveralls": "^3.0.2",
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
