@@ -60,14 +60,10 @@ const openForm = (evnt, contentId) => {
 
 // Show Record 
 const showPage = () => {
-    document.querySelector("#full-view").style.top = "0";
-    document.querySelector("#full-view").style.zIndex = "3";
-    document.querySelector("#full-view").style.backgroundColor = "#333333c9";
+    document.querySelector(".full-view").classList.add("show-page");
 }
 
 // Close Record
 const closePage = () => {
-    document.querySelector("#full-view").style.top = "-200%";
-    document.querySelector("#full-view").style.zIndex = "-1";
-    document.querySelector("#full-view").style.backgroundColor = "transparent";
+    document.querySelector(".full-view").classList.remove("show-page");
 }

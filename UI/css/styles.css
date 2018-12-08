@@ -615,7 +615,7 @@ th.width-50 {
 }
 
 /* Full view */
-#full-view  {
+.full-view  {
     position: absolute;
     top: -200%;
     right: 0;
@@ -624,6 +624,14 @@ th.width-50 {
     z-index: -1;
     transition: ease 1s;
 }
+
+
+.show-page {
+    top: 0 !important;
+    z-index: 3 !important;
+    background-color: #333333c9 !important;
+}
+
 
 .view-page {
     padding: 70px 54px 0;
