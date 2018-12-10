@@ -1,12 +1,13 @@
 //Menu toggle
+let sideMenu = document.querySelector("#side-menu");
 document.querySelector("#toggler").addEventListener("click", (e) => {
     e.preventDefault;
-    document.querySelector("#side-menu").style.left="0";
+    sideMenu.style.left="0";
 });
 
 document.querySelector("#hideMenu").addEventListener("click", (e) => {
     e.preventDefault;
-    document.querySelector("#side-menu").style.left="-240px";
+    sideMenu.style.left = "-240px";
 });
 
 
@@ -21,7 +22,7 @@ let sideLinks = document.querySelectorAll("#side-list li a");
 sideLinks.forEach(item => {
     item.addEventListener("click", (e) => {
         item.className = item.className.replace(" active", "");
-        
+
         e.currentTarget.classList += " active";
     });
 });
@@ -41,7 +42,7 @@ const openForm = (evnt, contentId) => {
 
     // Get all the elements with the class "content" and hide them
     tabcontent = document.querySelectorAll(".tabcontent");
-    
+
     tabcontent.forEach(item => {
         item.style.display="none";
     });
@@ -58,7 +59,7 @@ const openForm = (evnt, contentId) => {
     evnt.currentTarget.className += " active";
 }
 
-// Show Record 
+// Show Record
 const showPage = () => {
     document.querySelector(".full-view").classList.add("show-page");
 }
