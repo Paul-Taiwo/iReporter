@@ -39,7 +39,10 @@ class Records {
 
     return res.status(201).json({
       status: 201,
-      data: [create],
+      data: [{
+        id: create.id,
+        message: create.message,
+      }],
     });
   }
 
@@ -72,7 +75,10 @@ class Records {
 
     return res.status(200).json({
       status: 200,
-      data: [updateLocation],
+      data: [{
+        id: updateLocation.id,
+        message: updateLocation.message,
+      }],
     });
   }
 
