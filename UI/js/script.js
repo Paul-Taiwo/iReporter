@@ -1,12 +1,17 @@
-//Menu toggle
-document.querySelector("#toggler").addEventListener("click", (e) => {
-    e.preventDefault;
-    document.querySelector("#side-menu").style.left="0";
+// Dropdown toggle
+document.querySelector('#toggleDropdown').addEventListener('click', (e) => {
+  e.preventDefault;
+  document.querySelector('#myDropdown').classList.toggle('show');
 });
 
-document.querySelector("#hideMenu").addEventListener("click", (e) => {
-    e.preventDefault;
-    document.querySelector("#side-menu").style.left="-240px";
+// Menu toggle
+document.querySelector('#toggler').addEventListener('click', (e) => {
+  e.preventDefault;
+  document.querySelector('#side-menu').style.left = '0';
+
+document.querySelector('#hideMenu').addEventListener('click', (e) => {
+  e.preventDefault;
+  document.querySelector('#side-menu').style.left = '-240px';
 });
 
 
@@ -17,13 +22,13 @@ document.querySelector("#hideMenu").addEventListener("click", (e) => {
     });
 
 // Toggle side menu active class
-let sideLinks = document.querySelectorAll("#side-list li a");
-sideLinks.forEach(item => {
-    item.addEventListener("click", (e) => {
-        item.className = item.className.replace(" active", "");
-        
-        e.currentTarget.classList += " active";
-    });
+const sideLinks = document.querySelectorAll('#side-list li a');
+sideLinks.forEach((item) => {
+  item.addEventListener('click', (e) => {
+    item.className = item.className.replace(' active', '');
+
+    e.currentTarget.classList += ' active';
+  });
 });
 // const changeActive = (e) => {
 //     let sideLinks = document.querySelectorAll("#side-list li a");
@@ -35,35 +40,48 @@ sideLinks.forEach(item => {
 //     });
 // }
 
-//Create Red flag record tab
+// Create Red flag record tab
 const openForm = (evnt, contentId) => {
-    let tabcontent, tablinks;
+  let tabcontent; let
+    tablinks;
 
-    // Get all the elements with the class "content" and hide them
-    tabcontent = document.querySelectorAll(".tabcontent");
-    
-    tabcontent.forEach(item => {
-        item.style.display="none";
-    });
+  // Get all the elements with the class "content" and hide them
+  tabcontent = document.querySelectorAll('.tabcontent');
 
-    // Get all the elements with the class "tablinks" and remove class active
-    tablinks = document.querySelectorAll(".tablinks");
+  tabcontent.forEach((item) => {
+    item.style.display = 'none';
+  });
 
-    tablinks.forEach(item => {
-        item.className = item.className.replace(" active", "");
-    });
+  // Get all the elements with the class "tablinks" and remove class active
+  tablinks = document.querySelectorAll('.tablinks');
 
-    // Show the current tab and add an active class to it
-    document.querySelector(contentId).style.display="block";
-    evnt.currentTarget.className += " active";
-}
+  tablinks.forEach((item) => {
+    item.className = item.className.replace(' active', '');
+  });
 
-// Show Record 
+  // Show the current tab and add an active class to it
+  document.querySelector(contentId).style.display = 'block';
+  evnt.currentTarget.className += ' active';
+};
+
+// Show Record
 const showPage = () => {
-    document.querySelector(".full-view").classList.add("show-page");
-}
+  document.querySelector('#full-view').style.top = '0';
+  document.querySelector('#full-view').style.zIndex = '3';
+  document.querySelector('#full-view').style.backgroundColor = '#333333c9';
+};
 
 // Close Record
 const closePage = () => {
-    document.querySelector(".full-view").classList.remove("show-page");
-}
+  document.querySelector('#full-view').style.top = '-200%';
+  document.querySelector('#full-view').style.zIndex = '-1';
+  document.querySelector('#full-view').style.backgroundColor = 'transparent';
+};
+
+// fetch('https://api.binance.com/api/v1/ticker/24hr')
+//   .then(res => res.json())
+//   .then((data) => {
+//     document.querySelector('#toggleDropdown').innerHTML = data[0].priceChange;
+//     console.log(data[0]);
+//   })
+//   .catch(err => console.log(err));

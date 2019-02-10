@@ -13,73 +13,62 @@
 <body>
 
     <!-- Left side menu -->
-    <div id="side-menu" class="toggle display-none-mobile">
-      <!-- Hide menu button -->
-      <button type="button" id="hideMenu" class="btn close-btn"><i class="lnr lnr-cross"></i></button>
-      <!-- End -->
-      
-      <!-- Logo -->
-      <div class="logo p-t-15 p-b-15">
-        <h2 class="t-center">iReporter</h2>
-      </div>
+    <div id="side-menu"class="toggle">
 
-      <!-- Sidebar menu -->
-      <div class="sidebar-menu">
-        <ul id="side-list" class="list-inline">
-          <li><a href="sign-in.html" class="active"><i class="lnr lnr-home"></i> Sign up</a></li>
-          <li><a href="sign-up.html" class=""><i class="lnr lnr-flag"></i> Sign in</a></li>
-          
-        </ul>
-      </div>
-      </div>
-      <!-- End left side menu -->
-      <!-- End -->
-     </div>
+        <!-- Hide menu button -->
+        <button type="button" id="hideMenu" class="btn close-btn"><i class="lnr lnr-cross"></i></button>
+        <!-- End -->
 
-    <div class="content-page-full">
-      <div class="content">
-
-        <!-- Top bar -->
-        <div class="topbar">
-          <nav class="navbar">
-
-            <!-- Mobile button -->
-            <button type="button" id="toggler" class="btn mobile-btn"><i class="lnr lnr-menu"></i></button>
-
-            <!-- Logo -->
-            <div class="logo p-t-15 p-b-15 p-l-30">
-              <h2 class="t-center t-white">iReporter</h2>
-            </div>
-            <!-- End -->
-            
-            <ul class="list-inline">
-              <li class="app-search m-t-20 m-l-20">
-                <form action="" role="search">
-                  <input type="search" name="" id="appSearch" placeholder="search.." class="control-input">
-                  <a class="search-icon" href="#">
-                    <i class="lnr lnr-magnifier"></i>
-                  </a>
-                </form>
-              </li>
-              <li class="log-sign">
-                <a class="btns btn-black-outline" href="sign-up.html">Sign Up</a>
-                <a class="btns btn-black-outline" href="sign-in.html">Sign Up</a>
-              </li>
-            </ul>
-            
-          </nav>
+        <!-- Logo -->
+        <div class="logo p-t-15 p-b-15">
+            <h2 class="t-center">iReporter</h2>
         </div>
-        <!-- Top bar ends -->
 
-        <div class="hero">
-          <div class="hero-text t-center">
-            <h1 class="t-white">Say NO to corruption</h1>
-            <p class="t-white">iReporter enables any/every citizen to bring any form of corruption to the notice 
-              of appropriate authorities and the general public.</p>
-              <div class="m-t-20">
-                <a class="btns btn-gold" href="sign-in.html">Sign Up</a>
-                <a class="btns btn-gold-r" href="sign-in.html">Sign In</a>
-              </div>
+        <!-- Sidebar menu -->
+        <div class="sidebar-menu">
+            <ul id="side-list" class="list-inline">
+                <li><a href="index.html" class="side-link active"><i class="lnr lnr-home"></i> Dashboard</a></li>
+                <li><a href="create-red-flag-record.html" class="side-link"><i class="lnr lnr-flag"></i> Create a red flag record</a></li>
+                <li><a href="create-an-intervention.html" class="side-link"><i class="lnr lnr-question-circle"></i> Create an intervention</a></li>
+                <li><a href="view-all-record.html" class="side-link"><i class="lnr lnr-layers"></i> View all records</a></li>
+                <li><a href="sign-in.html" class="side-link"><i class="lnr lnr-power-switch"></i> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- End left side menu -->
+
+    <!-- Content -->
+    <div class="content-page">
+        <div class="content">
+
+            <!-- Top bar -->
+            <div class="topbar">
+                <nav class="navbar">
+
+                    <!-- Mobile button -->
+                    <button type="button" id="toggler" class="btn mobile-btn"><i class="lnr lnr-menu"></i></button>
+                    <!-- End -->
+
+                    <ul class="list-inline">
+                        <li class="app-search m-t-20 m-l-20">
+                            <form action="" role="search">
+                                <input type="search" name="" id="appSearch" placeholder="search.." class="control-input">
+                                <a class="search-icon" href="#">
+                                    <i class="lnr lnr-magnifier"></i>
+                                </a>
+                            </form>
+                        </li>
+                        <li class="dropdown">
+                            <!-- <p>Welcome</p> -->
+                            <button id="toggleDropdown" class="btns dropbtn">`${data.message}`<i class="lnr lnr-chevron-down"></i></button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="update-profile.html"><i class="lnr lnr-user"></i>  Update Profile</a>
+                                <a href="change-passwrd.html"><i class="lnr lnr-cog"></i>  Change password</a>
+                                <a href="sign-in.html"><i class="lnr lnr-power-switch"></i>  Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
             </div>
 
             <!-- Unsplash Credit -->
@@ -109,30 +98,113 @@
                      cupiditate aliquam explicabo iste non nulla neque ab.</p>
                                           </div>
                     </div>
-                  </div>
-                  
-              <div class="c-md-6">
-                <div class="card">
-                  <div class="card-wrap">
-                    <h2 class="t-center">Create intervention records</h2>
-                    <p class="font-14">Red flag records are records creted to Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Nostrum molestiae eius quis aperiam hic reprehenderit temporibus rem eveniet 
-                      ad eligendi cupiditate ab modi quo esse, laboriosam facere perspiciatis? Minus, harum. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea tenetur quisquam id illo nam. 
-                      Iusto odio dolorum itaque labore nemo excepturi quia laboriosam, quo autem ratione eaque vero alias est.</p>
-                                      
-                  </div>
-                </div>
-              </div>
-          </div>
-      </div>
+
+                    <!-- Record Status -->
+                    <div class="row m-b-30">
+                        <div class="c-md-6 c-xl-3 m-b-30">
+                            <div class="card">
+                                <div class="card-wrap t-center">
+                                    <h1 class="font-4em">10</h1>
+                                    <h4 class="bg-info t-white">Total Records</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="c-md-6 c-xl-3 m-b-30">
+                            <div class="card">
+                                <div class="card-wrap t-center">
+                                    <h1 class="font-4em">5</h1>
+                                    <h4 class="bg-success t-white">Resolved</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="c-md-6 c-xl-3 m-b-30">
+                            <div class="card">
+                                <div class="card-wrap t-center">
+                                    <h1 class="font-4em">4</h1>
+                                    <h4 class="bg-warning t-white">Under Investigation</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="c-md-6 c-xl-3">
+                            <div class="card">
+                                <div class="card-wrap t-center">
+                                    <h1 class="font-4em">1</h1>
+                                    <h4 class="bg-danger t-white">Rejected</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- End -->
+
+                    <!-- List of all records -->
+                    <div class="row">
+                        <div class="c-md-12 m-b-60">
+                            <div class="card">
+                                <div class="card-wrap table-mobile">
+                                    <h4 class="t-center m-b-15">All Records</h4>
+
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th class="num">S/N</th>
+                                                <th class="nt-num">Name of record</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Bad Road at Ikola-Odunsi</td>
+                                                <td>
+                                                    <h5 class="bg-success t-white t-center">Resolved</h5>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Burst water pipe at Agege moshalashi</td>
+                                                <td>
+                                                    <h5 class="bg-warning t-white t-center">Under Investigation</h5>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Bribery Corruption</td>
+                                                <td>
+                                                    <h5 class="bg-danger t-white t-center">Rejected</h5>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Embezzlement of Government Funds</td>
+                                                <td>
+                                                    <h5 class="bg-warning t-white t-center">Pending</h5>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End -->
+
+            </div>
+            <!-- Page content ends -->
+        </div>
     </div>
+      
     <!-- Footer -->
     <footer class="footer footer-full">
       <p> &copy; 2018 Andela-iReporter</p>
     </footer>
     <!-- End footer -->
-  
 
-  <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
+
 </body>
 </html>
