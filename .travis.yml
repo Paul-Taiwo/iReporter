@@ -3,11 +3,16 @@ language: node_js
 node_js: 
   - node
 
+sudo: false
+
 install:
   - npm install -q --no-color --no-progress
   
 script: 
-  - npm test
+   - nyc --reporter=lcov npm run test
 
-after success: 
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
+after_success: 
   - npm run coverage
