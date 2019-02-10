@@ -2,7 +2,7 @@ import chai, { expect } from 'chai';
 import chaiHttp from 'chai-http';
 import { describe, it } from 'mocha';
 
-import app from '../app';
+import app from '../../app';
 
 chai.use(chaiHttp);
 
@@ -194,7 +194,6 @@ describe('red-flags/ Controller', () => {
         })
         .end((err, res) => {
           expect(err).to.equal(null);
-          console.log('=============>', res.body);
           expect(res.body).to.be.an('object');
           expect(res.statusCode).to.equal(200);
           expect(res.body.status).to.equal(200);
