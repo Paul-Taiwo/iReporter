@@ -1,7 +1,7 @@
 import chai, { expect } from 'chai';
 import chaiHttp from 'chai-http';
 import { describe, it } from 'mocha';
-import app from '../app';
+import app from '../../app';
 
 chai.use(chaiHttp);
 
@@ -16,8 +16,8 @@ describe('API Endpoints', () => {
       .end((err, res) => {
         expect(res.body).to.be.an('object');
         expect(res.statusCode).to.equal(404);
-        expect(res.body.message).equal('Not found');
-        expect(res.body.status).to.equal('error');
+        expect(res.body.error).equal('Bad request');
+        expect(res.body.status).to.equal(404);
         done();
       });
   });

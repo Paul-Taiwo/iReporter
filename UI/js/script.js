@@ -8,12 +8,18 @@ document.querySelector('#toggleDropdown').addEventListener('click', (e) => {
 document.querySelector('#toggler').addEventListener('click', (e) => {
   e.preventDefault;
   document.querySelector('#side-menu').style.left = '0';
-});
 
 document.querySelector('#hideMenu').addEventListener('click', (e) => {
   e.preventDefault;
   document.querySelector('#side-menu').style.left = '-240px';
 });
+
+
+// Dropdown toggle
+    document.querySelector("#toggleDropdown").addEventListener("click", (e) => {
+        e.preventDefault;
+        document.querySelector("#myDropdown").classList.toggle("show");
+    });
 
 // Toggle side menu active class
 const sideLinks = document.querySelectorAll('#side-list li a');
