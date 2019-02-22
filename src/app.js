@@ -4,8 +4,8 @@ import logger from 'morgan';
 import cors from 'cors';
 import log from 'fancy-log';
 
-import indexRoutes from './routes';
-import recordRoutes from './routes/records';
+import indexRoutes from './usingJSObject/routes';
+import recordRoutes from './usingJSObject/routes/records';
 
 const app = express();
 

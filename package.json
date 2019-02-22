@@ -21,6 +21,7 @@
   "author": "Paul Taiwo <ayopaulot@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
@@ -30,6 +31,7 @@
     "express": "^4.16.4",
     "fancy-log": "^1.3.3",
     "i": "^0.3.6",
+    "jsonwebtoken": "^8.4.0",
     "mocha": "^5.2.0",
     "morgan": "^1.9.1",
     "path": "^0.12.7",

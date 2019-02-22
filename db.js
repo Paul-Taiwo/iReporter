@@ -1,5 +1,6 @@
 const { Pool } = require('pg');
 const dotenv = require('dotenv');
+const log = require('fancy-log');
 
 const pool = new Pool({
   user: process.env.PGUSER,
@@ -13,11 +14,11 @@ dotenv.config();
 
 
 pool.on('connect', () => {
-  console.log('connected to the db');
+  log.info('connected to the db');
 });
 
 const userTable = () => {
-  const queryText = `CREATE TABLE IF NOT EXISTS
+  const queryText = `CREATE TABLE IF NOT EXIST
   users(
     ID SERIAL,
     firstname VARCHAR(225) NOT NULL,
@@ -32,11 +33,11 @@ const userTable = () => {
   )`;
   pool.query(queryText)
     .then((res) => {
-      console.log(res);
+      log.info(res);
       pool.end();
     })
     .catch((err) => {
-      console.log('========>', err);
+      log.error(err);
       pool.end();
     });
 };
@@ -58,11 +59,11 @@ const incident = () => {
 
   pool.query(queryText)
     .then((res) => {
-      console.log(res);
+      log.info(res);
       pool.end();
     })
     .catch((err) => {
-      console.log(err);
+      log.error(err);
       pool.end();
     });
 };
@@ -72,14 +73,19 @@ const dropTable = () => {
 
   pool.query(queryText)
     .then((res) => {
-      console.log(res);
+      log.info(res);
       pool.end();
     })
     .catch((err) => {
-      console.log(err);
+      log.error(err);
       pool.end();
     });
 };
+
+pool.on('remove', () => {
+  log.info('Client Removed');
+  process.exit(0);
+});
 
 module.exports = {
   userTable,
