@@ -4,6 +4,6 @@ import Validate from '../middlewares/validator';
 
 const Route = express.Router();
 
-Route.post('/register', Validate.validate, Auth.register);
+Route.post('/auth/signup', Validate.validate, Auth.register);
 
 export default Route;
