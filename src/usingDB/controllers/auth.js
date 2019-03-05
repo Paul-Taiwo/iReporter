@@ -22,7 +22,7 @@ class Auth {
           const encryptedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync());
           const query = 'INSERT INTO users(id, firstname, lastname, othernames, email, username, password, "phoneNumber", registered, "isAdmin") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING id, firstname, lastname, othernames, email, username, "phoneNumber", "isAdmin", registered';
           const userData = [
-            10004, firstname, lastname, othernames, email, username, encryptedPassword, phoneNumber, new Date().toISOString(), false,
+            10005, firstname, lastname, othernames, email, username, encryptedPassword, phoneNumber, new Date().toISOString(), false,
           ];
 
           db.query(query, userData)
@@ -42,9 +42,10 @@ class Auth {
               const token = jwt.sign({ user }, process.env.SECRETKEY, { expiresIn: '24h' });
               res.status(201).json({
                 status: 201,
-                message: 'success',
-                user,
-                token,
+                data: [{
+                  token,
+                  user,
+                }],
               });
             })
             .catch((err) => {
