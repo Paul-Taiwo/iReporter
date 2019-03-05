@@ -22,7 +22,7 @@ class Auth {
           const encryptedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync());
           const query = 'INSERT INTO users(id, firstname, lastname, othernames, email, username, password, "phoneNumber", registered, "isAdmin") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING id, firstname, lastname, othernames, email, username, "phoneNumber", "isAdmin", registered';
           const userData = [
-            10005,
+            1000,
             firstname,
             lastname,
             othernames,
@@ -72,6 +72,10 @@ class Auth {
         });
       });
   }
+
+  // static login {
+  //   const { email, password } = req.body;
+  // }
 }
 
 export default Auth;
