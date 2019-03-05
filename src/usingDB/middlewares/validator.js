@@ -15,9 +15,11 @@ class Validate {
         case !firstname || !lastname || !othernames:
           return res.status(400).json({
             status: 400,
-            message: 'Name fieldss cannot be empty',
+            message: 'Name fields cannot be empty',
           });
-        case firstname.trim().length <= 2 || lastname.trim().length <= 2 || othernames.trim().length <= 2:
+        case firstname.trim().length <= 2
+        || lastname.trim().length <= 2
+        || othernames.trim().length <= 2:
           return res.status(400).json({
             status: 400,
             message: 'Name fields cannot be less than two characters',
@@ -46,7 +48,10 @@ class Validate {
         default:
           break;
       }
+
+      return false;
     })();
+
     return next();
   }
 }
