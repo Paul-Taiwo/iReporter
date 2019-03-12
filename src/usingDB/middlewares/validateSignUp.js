@@ -10,6 +10,15 @@ class Validate {
       username,
     } = req.body;
 
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (re.test(String(email).toLowerCase()) === false) {
+      return res.status(400).json({
+        status: 400,
+        error: 'Please provide a valid email address',
+      });
+    }
+
     (() => {
       switch (true) {
         case !firstname || !lastname || !othernames:
@@ -22,17 +31,12 @@ class Validate {
         || othernames.trim().length <= 2:
           return res.status(400).json({
             status: 400,
-            message: 'Name fields cannot be less than two characters',
+            message: 'Name fields cannot be less than 2 characters',
           });
         case !username:
           return res.status(400).json({
             status: 400,
             message: 'Please input a username',
-          });
-        case !email:
-          return res.status(400).json({
-            status: 400,
-            message: 'Please input an email',
           });
         case !password:
           return res.status(400).json({
