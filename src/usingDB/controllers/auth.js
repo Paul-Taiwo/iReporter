@@ -84,9 +84,7 @@ class Auth {
             error: 'Email is incorrect',
           });
         } else {
-          console.log(result.row[0]);
-          const comparePassword = bcrypt.compareSync(password, result.row[0].password);
-
+          const comparePassword = bcrypt.compareSync(password, result.rows[0].password);
           if (!comparePassword) {
             res.status(400).json({
               status: 400,
