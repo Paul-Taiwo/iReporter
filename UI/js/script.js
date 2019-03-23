@@ -78,10 +78,11 @@ const closePage = () => {
   document.querySelector('#full-view').style.backgroundColor = 'transparent';
 };
 
-// fetch('https://api.binance.com/api/v1/ticker/24hr')
-//   .then(res => res.json())
-//   .then((data) => {
-//     document.querySelector('#toggleDropdown').innerHTML = data[0].priceChange;
-//     console.log(data[0]);
-//   })
-//   .catch(err => console.log(err));
+/* fetch('https://api.binance.com/api/v1/ticker/24hr')
+  .then(res => res.json())
+  .then((data) => {
+    document.querySelector('#toggleDropdown').innerHTML = data[0].priceChange;
+    console.log(data[0]);
+  })
+  .catch(err => console.log(err));
+ */

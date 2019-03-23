@@ -9,6 +9,7 @@ import indexRoutes from './usingJSObject/routes';
 import recordRoutes from './usingJSObject/routes/records';
 
 import dbRoute from './usingDB/routes/auth';
+import record from './usingDB/routes/records';
 
 const app = express();
 
@@ -23,8 +24,7 @@ const PORT = process.env.PORT || 8080;
 app.use('/api/v1/', indexRoutes);
 app.use('/api/v1/red-flags', recordRoutes);
 
-app.use('/api/v1/', dbRoute);
-
+app.use('/api/v1/', [dbRoute, record]);
 app.all('*', (req, res) => res.status(404).json({
   status: 404,
   error: 'Bad request',

@@ -16,6 +16,7 @@
 .list-inline {
     list-style-type: none;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -81,7 +82,7 @@ a {
 
 /* Text Format */
 .t-center {
-    text-align: center!important;
+    text-align: center !important;
 }
 
 .t-white {
@@ -184,7 +185,7 @@ a {
     position: relative;
     overflow: hidden;
     display: inline-block;
-  }
+}
 
 .upload-btn input[type=file] {
     position: absolute;

@@ -43,7 +43,7 @@ const userTable = () => {
 };
 
 const incident = () => {
-  const queryText = `CREATE TYPE rec_status as ENUM(draft, under investigation, resolved, rejected);
+  const queryText = `CREATE TYPE rec_status as ENUM('draft', 'under investigation', 'resolved', 'rejected');
   CREATE TABLE IF NOT EXISTS
   records(
     ID SERIAL,
@@ -52,8 +52,8 @@ const incident = () => {
     type VARCHAR(225) NOT NULL,
     location VARCHAR(225) NOT NULL,
     status rec_status,
-    images,
-    videos,
+    "images" VARCHAR(225),
+    "videos" VARCHAR(255),
     comment VARCHAR(225) NOT NULL
   )`;
 
